@@ -434,7 +434,7 @@
     <value>NoControl</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 116</value>
+    <value>476, 116</value>
   </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>77, 15</value>
@@ -458,7 +458,7 @@
     <value>1</value>
   </data>
   <data name="progressBar1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 133</value>
+    <value>476, 133</value>
   </data>
   <data name="progressBar1.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -509,7 +509,7 @@
     <value>0</value>
   </data>
   <data name="numberTasks.Location" type="System.Drawing.Point, System.Drawing">
-    <value>497, 14</value>
+    <value>476, 14</value>
   </data>
   <data name="numberTasks.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
@@ -533,13 +533,13 @@
     <value>3</value>
   </data>
   <data name="panel3.Location" type="System.Drawing.Point, System.Drawing">
-    <value>171, 18</value>
+    <value>192, 11</value>
   </data>
   <data name="panel3.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
     <value>3, 2, 3, 2</value>
   </data>
   <data name="panel3.Size" type="System.Drawing.Size, System.Drawing">
-    <value>770, 195</value>
+    <value>749, 195</value>
   </data>
   <data name="panel3.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>

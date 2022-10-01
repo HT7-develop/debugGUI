@@ -71,7 +71,6 @@
             this.button4.FlatAppearance.BorderSize = 0;
             this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
             this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Image = global::debugGUI.Properties.Resources.settings;
             this.button4.Name = "button4";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
@@ -83,7 +82,6 @@
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
             resources.ApplyResources(this.button3, "button3");
             this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Image = global::debugGUI.Properties.Resources.home;
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = false;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -95,7 +93,6 @@
             this.button2.FlatAppearance.BorderSize = 0;
             this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
             this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Image = global::debugGUI.Properties.Resources.home;
             this.button2.Name = "button2";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += new System.EventHandler(this.button2_Click);
@@ -107,7 +104,6 @@
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
             this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Image = global::debugGUI.Properties.Resources.home;
             this.button1.Name = "button1";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -119,7 +115,6 @@
             this.btnDashboard.FlatAppearance.BorderSize = 0;
             this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
             this.btnDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDashboard.Image = global::debugGUI.Properties.Resources.home;
             this.btnDashboard.Name = "btnDashboard";
             this.btnDashboard.UseVisualStyleBackColor = false;
             this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
@@ -141,7 +136,6 @@
             // 
             // profilePicture
             // 
-            this.profilePicture.Image = global::debugGUI.Properties.Resources.Untitled_11;
             resources.ApplyResources(this.profilePicture, "profilePicture");
             this.profilePicture.Name = "profilePicture";
             this.profilePicture.TabStop = false;
