@@ -61,5 +61,10 @@ namespace debugGUI
         {
 
         }
+
+        private void Projects_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
