@@ -85,9 +85,9 @@
             // button3
             // 
             this.button3.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.button3, "button3");
             this.button3.FlatAppearance.BorderSize = 0;
             this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            resources.ApplyResources(this.button3, "button3");
             this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.button3.Name = "button3";
             this.button3.UseVisualStyleBackColor = false;
