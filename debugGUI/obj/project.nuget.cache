@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "8zl+fkNZWM2ByU79jON31rvmQPD9O8lI8FgX2fuokGeP7/PScY8hAEVl4g6et4PQYJcP5VSczRmuMoqzAQSWpg==",
+  "dgSpecHash": "XCHFIVdYNxxPRoYS2XgxcJkA1w3EHtHlzGKRPE6m4UgGdyuxsPmKN+67H/UATOWMhrzP7rGQbAxJgPL+nrDnRQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\incub\\source\\repos\\debugGUI\\debugGUI\\debugGUI.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\incub\\.nuget\\packages\\fontawesome.sharp\\6.1.1\\fontawesome.sharp.6.1.1.nupkg.sha512"
+  ],
   "logs": []
 }

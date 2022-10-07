@@ -66,5 +66,15 @@ namespace debugGUI
         {
 
         }
+
+        private void iconButton5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainButtonsHover(object sender, MouseEventArgs e)
+        {
+           // for making the tab active
+        }
     }
 }

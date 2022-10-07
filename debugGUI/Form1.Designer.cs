@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.btnDashboard = new System.Windows.Forms.Button();
+            this.SettingsButton = new FontAwesome.Sharp.IconButton();
+            this.ChatButton = new FontAwesome.Sharp.IconButton();
+            this.TeamsButton = new FontAwesome.Sharp.IconButton();
+            this.TasksButton = new FontAwesome.Sharp.IconButton();
+            this.ProjectsButton = new FontAwesome.Sharp.IconButton();
+            this.DashboardButton = new FontAwesome.Sharp.IconButton();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -63,68 +64,99 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button3);
-            this.panel1.Controls.Add(this.button2);
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnDashboard);
+            this.panel1.Controls.Add(this.SettingsButton);
+            this.panel1.Controls.Add(this.ChatButton);
+            this.panel1.Controls.Add(this.TeamsButton);
+            this.panel1.Controls.Add(this.TasksButton);
+            this.panel1.Controls.Add(this.ProjectsButton);
+            this.panel1.Controls.Add(this.DashboardButton);
             this.panel1.Controls.Add(this.panel2);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // button4
+            // SettingsButton
             // 
-            resources.ApplyResources(this.button4, "button4");
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.button4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button4.Name = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.SettingsButton, "SettingsButton");
+            this.SettingsButton.FlatAppearance.BorderSize = 0;
+            this.SettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.SettingsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.SettingsButton.IconChar = FontAwesome.Sharp.IconChar.Sliders;
+            this.SettingsButton.IconColor = System.Drawing.Color.White;
+            this.SettingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.SettingsButton.Name = "SettingsButton";
+            this.SettingsButton.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // ChatButton
             // 
-            this.button3.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button3, "button3");
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.button3.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button3.Name = "button3";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.ChatButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.ChatButton, "ChatButton");
+            this.ChatButton.FlatAppearance.BorderSize = 0;
+            this.ChatButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.ChatButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ChatButton.IconChar = FontAwesome.Sharp.IconChar.Comments;
+            this.ChatButton.IconColor = System.Drawing.Color.White;
+            this.ChatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ChatButton.Name = "ChatButton";
+            this.ChatButton.UseVisualStyleBackColor = false;
+            this.ChatButton.Click += new System.EventHandler(this.iconButton5_Click);
+            this.ChatButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
             // 
-            // button2
+            // TeamsButton
             // 
-            this.button2.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button2, "button2");
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.button2.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button2.Name = "button2";
-            this.button2.UseVisualStyleBackColor = false;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.TeamsButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TeamsButton, "TeamsButton");
+            this.TeamsButton.FlatAppearance.BorderSize = 0;
+            this.TeamsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.TeamsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.TeamsButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.TeamsButton.IconColor = System.Drawing.Color.White;
+            this.TeamsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TeamsButton.Name = "TeamsButton";
+            this.TeamsButton.UseVisualStyleBackColor = false;
+            this.TeamsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
             // 
-            // button1
+            // TasksButton
             // 
-            this.button1.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.TasksButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.TasksButton, "TasksButton");
+            this.TasksButton.FlatAppearance.BorderSize = 0;
+            this.TasksButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.TasksButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.TasksButton.IconChar = FontAwesome.Sharp.IconChar.ListCheck;
+            this.TasksButton.IconColor = System.Drawing.Color.White;
+            this.TasksButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.TasksButton.Name = "TasksButton";
+            this.TasksButton.UseVisualStyleBackColor = false;
+            this.TasksButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
             // 
-            // btnDashboard
+            // ProjectsButton
             // 
-            this.btnDashboard.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.btnDashboard, "btnDashboard");
-            this.btnDashboard.FlatAppearance.BorderSize = 0;
-            this.btnDashboard.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.btnDashboard.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.btnDashboard.Name = "btnDashboard";
-            this.btnDashboard.UseVisualStyleBackColor = false;
-            this.btnDashboard.Click += new System.EventHandler(this.btnDashboard_Click);
+            this.ProjectsButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.ProjectsButton, "ProjectsButton");
+            this.ProjectsButton.FlatAppearance.BorderSize = 0;
+            this.ProjectsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.ProjectsButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ProjectsButton.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.ProjectsButton.IconColor = System.Drawing.Color.White;
+            this.ProjectsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ProjectsButton.Name = "ProjectsButton";
+            this.ProjectsButton.UseVisualStyleBackColor = false;
+            this.ProjectsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            // 
+            // DashboardButton
+            // 
+            this.DashboardButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.DashboardButton, "DashboardButton");
+            this.DashboardButton.FlatAppearance.BorderSize = 0;
+            this.DashboardButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.DashboardButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.DashboardButton.IconChar = FontAwesome.Sharp.IconChar.Home;
+            this.DashboardButton.IconColor = System.Drawing.Color.White;
+            this.DashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.DashboardButton.Name = "DashboardButton";
+            this.DashboardButton.UseVisualStyleBackColor = false;
+            this.DashboardButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
             // 
             // panel2
             // 
@@ -257,12 +289,7 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Button btnDashboard;
         private Label label1;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private Button button4;
         private Panel panel3;
         private Panel panel4;
         private Panel panel7;
@@ -275,5 +302,11 @@
         private Label label3;
         private Label label4;
         private PictureBox pictureBox1;
+        private FontAwesome.Sharp.IconButton DashboardButton;
+        private FontAwesome.Sharp.IconButton ChatButton;
+        private FontAwesome.Sharp.IconButton TeamsButton;
+        private FontAwesome.Sharp.IconButton TasksButton;
+        private FontAwesome.Sharp.IconButton ProjectsButton;
+        private FontAwesome.Sharp.IconButton SettingsButton;
     }
 }
