@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic.Logging;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -41,6 +42,9 @@ namespace debugGUI
         private void LoginUser(object sender, EventArgs e)
         {
             // compare input with DB and call Form1 (dashbord) as a class
+            this.Close();
+            Form Dashboard = new Form1();
+            Dashboard.ShowDialog();
         }
     }
 }
