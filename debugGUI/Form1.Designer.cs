@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelMenu = new System.Windows.Forms.Panel();
             this.SettingsButton = new FontAwesome.Sharp.IconButton();
             this.ChatButton = new FontAwesome.Sharp.IconButton();
             this.TeamsButton = new FontAwesome.Sharp.IconButton();
@@ -50,7 +50,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.panel1.SuspendLayout();
+            this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel4.SuspendLayout();
@@ -61,18 +61,18 @@
             this.panel9.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // panelMenu
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.panel1.Controls.Add(this.SettingsButton);
-            this.panel1.Controls.Add(this.ChatButton);
-            this.panel1.Controls.Add(this.TeamsButton);
-            this.panel1.Controls.Add(this.TasksButton);
-            this.panel1.Controls.Add(this.ProjectsButton);
-            this.panel1.Controls.Add(this.DashboardButton);
-            this.panel1.Controls.Add(this.panel2);
-            resources.ApplyResources(this.panel1, "panel1");
-            this.panel1.Name = "panel1";
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.panelMenu.Controls.Add(this.SettingsButton);
+            this.panelMenu.Controls.Add(this.ChatButton);
+            this.panelMenu.Controls.Add(this.TeamsButton);
+            this.panelMenu.Controls.Add(this.TasksButton);
+            this.panelMenu.Controls.Add(this.ProjectsButton);
+            this.panelMenu.Controls.Add(this.DashboardButton);
+            this.panelMenu.Controls.Add(this.panel2);
+            resources.ApplyResources(this.panelMenu, "panelMenu");
+            this.panelMenu.Name = "panelMenu";
             // 
             // SettingsButton
             // 
@@ -86,6 +86,7 @@
             this.SettingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.SettingsButton.Name = "SettingsButton";
             this.SettingsButton.UseVisualStyleBackColor = false;
+            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
             // 
             // ChatButton
             // 
@@ -99,8 +100,7 @@
             this.ChatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ChatButton.Name = "ChatButton";
             this.ChatButton.UseVisualStyleBackColor = false;
-            this.ChatButton.Click += new System.EventHandler(this.iconButton5_Click);
-            this.ChatButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            this.ChatButton.Click += new System.EventHandler(this.ChatButton_Click);
             // 
             // TeamsButton
             // 
@@ -114,7 +114,7 @@
             this.TeamsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TeamsButton.Name = "TeamsButton";
             this.TeamsButton.UseVisualStyleBackColor = false;
-            this.TeamsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            this.TeamsButton.Click += new System.EventHandler(this.TeamsButton_Click);
             // 
             // TasksButton
             // 
@@ -128,7 +128,7 @@
             this.TasksButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.TasksButton.Name = "TasksButton";
             this.TasksButton.UseVisualStyleBackColor = false;
-            this.TasksButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            this.TasksButton.Click += new System.EventHandler(this.TasksButton_Click);
             // 
             // ProjectsButton
             // 
@@ -142,7 +142,7 @@
             this.ProjectsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.ProjectsButton.Name = "ProjectsButton";
             this.ProjectsButton.UseVisualStyleBackColor = false;
-            this.ProjectsButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            this.ProjectsButton.Click += new System.EventHandler(this.ProjectsButton_Click);
             // 
             // DashboardButton
             // 
@@ -156,7 +156,7 @@
             this.DashboardButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.DashboardButton.Name = "DashboardButton";
             this.DashboardButton.UseVisualStyleBackColor = false;
-            this.DashboardButton.MouseMove += new System.Windows.Forms.MouseEventHandler(this.MainButtonsHover);
+            this.DashboardButton.Click += new System.EventHandler(this.DashboardButton_Click);
             // 
             // panel2
             // 
@@ -169,7 +169,6 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.label1.Name = "label1";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel3
             // 
@@ -214,7 +213,6 @@
             resources.ApplyResources(this.Projects, "Projects");
             this.Projects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
             this.Projects.Name = "Projects";
-            this.Projects.Click += new System.EventHandler(this.Projects_Click);
             // 
             // panel5
             // 
@@ -265,10 +263,10 @@
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Controls.Add(this.panelMenu);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.panel1.ResumeLayout(false);
+            this.panelMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -287,7 +285,7 @@
 
         #endregion
 
-        private Panel panel1;
+        private Panel panelMenu;
         private Panel panel2;
         private Label label1;
         private Panel panel3;

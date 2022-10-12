@@ -1,80 +1,76 @@
+using FontAwesome.Sharp;
+
 namespace debugGUI
 {
     public partial class Form1 : Form
     {
+
+        private IconButton currentButton;
+        readonly Color ButtonColor =  Color.FromArgb(115, 103, 240);
+
+
         public Form1()
         {
             InitializeComponent();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
+         
+
+        private void ActivateButton(object btnSender)
         {
+            if(btnSender != null)
+            {
+                if (currentButton != (IconButton)btnSender)
+                {
+                    DisableButton();
+               
+                    currentButton = (IconButton)btnSender;
+                    currentButton.BackColor = ButtonColor;
+                    currentButton.ForeColor = Color.Gainsboro;
+                    currentButton.Font = new System.Drawing.Font("Arial", 17.75F, System.Drawing.FontStyle.Regular,System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+                }
+            }
+        }
+
+        private void DisableButton()
+        {
+            if (currentButton != null)
+            {
+                currentButton.BackColor = Color.FromArgb(40, 48, 70);
+                currentButton.ForeColor = Color.Gainsboro;
+                currentButton.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            }
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void DashboardButton_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
         }
 
-        private void btnDashboard_Click(object sender, EventArgs e)
+        private void ProjectsButton_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void TasksButton_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void TeamsButton_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
         }
 
-        private void settingsIcon_Click(object sender, EventArgs e)
+        private void ChatButton_Click(object sender, EventArgs e)
         {
-
+            ActivateButton(sender);
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void SettingsButton_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void Projects_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void iconButton5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void MainButtonsHover(object sender, MouseEventArgs e)
-        {
-           // for making the tab active
+            ActivateButton(sender);
         }
     }
 }

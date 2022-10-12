@@ -18,3 +18,4 @@ C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.
 C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\ref\debugGUI.dll
 C:\Users\incub\source\repos\debugGUI\debugGUI\bin\Debug\net6.0-windows\FontAwesome.Sharp.dll
 C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.csproj.CopyComplete
+C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.Form2.resources

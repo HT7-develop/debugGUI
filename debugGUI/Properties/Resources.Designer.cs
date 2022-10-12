@@ -63,6 +63,16 @@ namespace debugGUI.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _6316 {
+            get {
+                object obj = ResourceManager.GetObject("6316", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap diagram_project_solid {
             get {
                 object obj = ResourceManager.GetObject("diagram-project-solid", resourceCulture);
