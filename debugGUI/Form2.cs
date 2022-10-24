@@ -8,8 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace debugGUI
 {
@@ -41,7 +41,7 @@ namespace debugGUI
 
             try
             {
-                conn.Open();
+                //conn.Open();
                 String querry = "SELECT * FROM users WHERE name = '"+usernameBox.Text+"' AND password = '"+passwordBox.Text+"'";
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
               
@@ -77,9 +77,18 @@ namespace debugGUI
             
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
 
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void dragForm(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

@@ -10,14 +10,8 @@ namespace debugGUI
         {
             // To customize application configuration such as set high DPI settings or default font,
             // see https://aka.ms/applicationconfiguration.
-
-
             ApplicationContext appCtx = new ApplicationContext(new Form2());
             Application.Run(appCtx);
-
-            //ApplicationConfiguration.Initialize();
-            //Application.Run(new Form2());
-            //Application.Run(new Form1());
         }
     }
 }

@@ -99,7 +99,7 @@
             this.button1.Location = new System.Drawing.Point(94, 355);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 6;
+            this.button1.TabIndex = 3;
             this.button1.Text = "Login";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.LoginUser);
@@ -116,7 +116,6 @@
             this.label2.Size = new System.Drawing.Size(76, 21);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label1
             // 
@@ -142,7 +141,7 @@
             this.usernameBox.Name = "usernameBox";
             this.usernameBox.PlaceholderText = "John Doe";
             this.usernameBox.Size = new System.Drawing.Size(150, 20);
-            this.usernameBox.TabIndex = 3;
+            this.usernameBox.TabIndex = 1;
             // 
             // passwordBox
             // 
@@ -197,6 +196,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(586, 450);
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragForm);
             // 
             // Form2
             // 
@@ -208,7 +208,7 @@
             this.ControlBox = false;
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.pictureBox1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";

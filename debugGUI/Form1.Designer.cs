@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.SettingsButton = new FontAwesome.Sharp.IconButton();
-            this.ChatButton = new FontAwesome.Sharp.IconButton();
+            this.ExitButton = new FontAwesome.Sharp.IconButton();
             this.TeamsButton = new FontAwesome.Sharp.IconButton();
             this.TasksButton = new FontAwesome.Sharp.IconButton();
             this.ProjectsButton = new FontAwesome.Sharp.IconButton();
@@ -45,6 +45,7 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.Projects = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.dgvTasks = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
@@ -56,6 +57,7 @@
             this.panel4.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
             this.panel8.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
@@ -64,8 +66,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.panelMenu.Controls.Add(this.SettingsButton);
-            this.panelMenu.Controls.Add(this.ChatButton);
+            this.panelMenu.Controls.Add(this.ExitButton);
             this.panelMenu.Controls.Add(this.TeamsButton);
             this.panelMenu.Controls.Add(this.TasksButton);
             this.panelMenu.Controls.Add(this.ProjectsButton);
@@ -74,33 +75,19 @@
             resources.ApplyResources(this.panelMenu, "panelMenu");
             this.panelMenu.Name = "panelMenu";
             // 
-            // SettingsButton
+            // ExitButton
             // 
-            this.SettingsButton.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.SettingsButton, "SettingsButton");
-            this.SettingsButton.FlatAppearance.BorderSize = 0;
-            this.SettingsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.SettingsButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.SettingsButton.IconChar = FontAwesome.Sharp.IconChar.Sliders;
-            this.SettingsButton.IconColor = System.Drawing.Color.White;
-            this.SettingsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.SettingsButton.Name = "SettingsButton";
-            this.SettingsButton.UseVisualStyleBackColor = false;
-            this.SettingsButton.Click += new System.EventHandler(this.SettingsButton_Click);
-            // 
-            // ChatButton
-            // 
-            this.ChatButton.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.ChatButton, "ChatButton");
-            this.ChatButton.FlatAppearance.BorderSize = 0;
-            this.ChatButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.ChatButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.ChatButton.IconChar = FontAwesome.Sharp.IconChar.Comments;
-            this.ChatButton.IconColor = System.Drawing.Color.White;
-            this.ChatButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.ChatButton.Name = "ChatButton";
-            this.ChatButton.UseVisualStyleBackColor = false;
-            this.ChatButton.Click += new System.EventHandler(this.ChatButton_Click);
+            this.ExitButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.ExitButton, "ExitButton");
+            this.ExitButton.FlatAppearance.BorderSize = 0;
+            this.ExitButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.ExitButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.ExitButton.IconChar = FontAwesome.Sharp.IconChar.DoorOpen;
+            this.ExitButton.IconColor = System.Drawing.Color.White;
+            this.ExitButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.ExitButton.Name = "ExitButton";
+            this.ExitButton.UseVisualStyleBackColor = false;
+            this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
             // TeamsButton
             // 
@@ -178,6 +165,7 @@
             this.panel3.Controls.Add(this.pictureBox1);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Name = "panel3";
+            this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragForm);
             // 
             // label4
             // 
@@ -218,8 +206,22 @@
             // 
             resources.ApplyResources(this.panel5, "panel5");
             this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.panel5.Controls.Add(this.dgvTasks);
             this.panel5.Controls.Add(this.panel8);
             this.panel5.Name = "panel5";
+            // 
+            // dgvTasks
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.Transparent;
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvTasks.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvTasks.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.dgvTasks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            resources.ApplyResources(this.dgvTasks, "dgvTasks");
+            this.dgvTasks.Name = "dgvTasks";
+            this.dgvTasks.RowTemplate.Height = 25;
             // 
             // panel8
             // 
@@ -264,7 +266,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMenu);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
             this.panelMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -274,6 +276,7 @@
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
             this.panel5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel6.ResumeLayout(false);
@@ -301,10 +304,10 @@
         private Label label4;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton DashboardButton;
-        private FontAwesome.Sharp.IconButton ChatButton;
         private FontAwesome.Sharp.IconButton TeamsButton;
         private FontAwesome.Sharp.IconButton TasksButton;
         private FontAwesome.Sharp.IconButton ProjectsButton;
-        private FontAwesome.Sharp.IconButton SettingsButton;
+        private FontAwesome.Sharp.IconButton ExitButton;
+        private DataGridView dgvTasks;
     }
 }
