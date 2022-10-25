@@ -2,6 +2,10 @@ using FontAwesome.Sharp;
 using System.Data.SqlClient;
 using System.Data;
 using System.Runtime.InteropServices;
+using System.Windows.Forms;
+using System;
+using System.Threading.Tasks;
+
 
 
 
@@ -12,15 +16,11 @@ namespace debugGUI
 
         private IconButton currentButton;
         readonly Color ButtonColor =  Color.FromArgb(115, 103, 240);
-
+        private Form activeForm;
 
         public Form1()
         {
-            InitializeComponent();
-
-            filltasks();
-
-
+            InitializeComponent(); 
         }
 
          
@@ -52,35 +52,42 @@ namespace debugGUI
 
         }
 
+        private void OpenTab(Form tab, object btnSender)
+        {
+            if (activeForm != null)
+                activeForm.Close();
+            ActivateButton(btnSender);
+            activeForm = tab;
+            tab.TopLevel = false;
+            tab.FormBorderStyle = FormBorderStyle.None;
+            tab.Dock = DockStyle.Fill;
+            this.panelDesktopPane.Controls.Add(tab);
+            this.panelDesktopPane.Tag = tab;
+            tab.BringToFront();
+            tab.Show();
+        }
+
         private void DashboardButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenTab(new FormDashboard(), sender);
         }
 
         private void ProjectsButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenTab(new FormProjects(), sender);
         }
 
         private void TasksButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenTab(new FormTasks(), sender);
         }
 
         private void TeamsButton_Click(object sender, EventArgs e)
         {
-            ActivateButton(sender);
+            OpenTab(new FormTeams(), sender);
         }
 
-        private void ChatButton_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
-
-        private void SettingsButton_Click(object sender, EventArgs e)
-        {
-            ActivateButton(sender);
-        }
+      
 
         private void fillTeams()
         {
@@ -117,18 +124,7 @@ namespace debugGUI
             SendMessage(this.Handle, 0x112,0xf012,0);
         }
 
-        private void filltasks()
-        {
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-            conn.Open();
-            String querry = "SELECT * FROM tasks";
-
-            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            dgvTasks.DataSource = dt;
-            conn.Close();
-        }
+       
         private void CloseApp(object sender, EventArgs e)
         {
             // when click on button X on the sign in page, a messagebox will pop-up to ask for confirmation
@@ -162,4 +158,7 @@ namespace debugGUI
             }
         }
     }
+
+    // function for opening childform 
+    
 }
