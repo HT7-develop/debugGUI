@@ -30,40 +30,56 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dgvProjects = new System.Windows.Forms.DataGridView();
             this.panel7 = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.Projects = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgvTasks = new System.Windows.Forms.DataGridView();
             this.panel8 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.werknemers = new System.Windows.Forms.DataGridView();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).BeginInit();
             this.panel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.panel6.SuspendLayout();
             this.panel9.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).BeginInit();
             this.panel8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.werknemers)).BeginInit();
             this.SuspendLayout();
             // 
             // panel4
             // 
             this.panel4.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.panel4.Controls.Add(this.dgvProjects);
             this.panel4.Controls.Add(this.panel7);
             this.panel4.Location = new System.Drawing.Point(6, 1);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(555, 325);
             this.panel4.TabIndex = 3;
+            // 
+            // dgvProjects
+            // 
+            this.dgvProjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProjects.Location = new System.Drawing.Point(48, 106);
+            this.dgvProjects.Name = "dgvProjects";
+            this.dgvProjects.RowTemplate.Height = 25;
+            this.dgvProjects.Size = new System.Drawing.Size(491, 150);
+            this.dgvProjects.TabIndex = 1;
+            this.dgvProjects.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProjects_CellContentClick);
+            this.dgvProjects.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.bla);
             // 
             // panel7
             // 
@@ -74,6 +90,19 @@
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(525, 45);
             this.panel7.TabIndex = 0;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(3, 6);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 1;
+            this.iconPictureBox1.TabStop = false;
             // 
             // Projects
             // 
@@ -93,6 +122,7 @@
             // 
             this.panel6.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.panel6.Controls.Add(this.werknemers);
             this.panel6.Controls.Add(this.panel9);
             this.panel6.Location = new System.Drawing.Point(6, 340);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -123,6 +153,19 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Teams";
             // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.Location = new System.Drawing.Point(3, 10);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox3.TabIndex = 2;
+            this.iconPictureBox3.TabStop = false;
+            // 
             // panel5
             // 
             this.panel5.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
@@ -149,6 +192,7 @@
             this.dgvTasks.RowTemplate.Height = 25;
             this.dgvTasks.Size = new System.Drawing.Size(542, 569);
             this.dgvTasks.TabIndex = 2;
+            this.dgvTasks.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvTasks_CellContentClick);
             // 
             // panel8
             // 
@@ -159,32 +203,6 @@
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(542, 45);
             this.panel8.TabIndex = 1;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
-            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.label2.Location = new System.Drawing.Point(35, 6);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(146, 31);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Latest Tasks";
-            // 
-            // iconPictureBox1
-            // 
-            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.BarChart;
-            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.Location = new System.Drawing.Point(3, 6);
-            this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox1.TabIndex = 1;
-            this.iconPictureBox1.TabStop = false;
             // 
             // iconPictureBox2
             // 
@@ -199,18 +217,27 @@
             this.iconPictureBox2.TabIndex = 3;
             this.iconPictureBox2.TabStop = false;
             // 
-            // iconPictureBox3
+            // label2
             // 
-            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ButtonFace;
-            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox3.Location = new System.Drawing.Point(3, 10);
-            this.iconPictureBox3.Name = "iconPictureBox3";
-            this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox3.TabIndex = 2;
-            this.iconPictureBox3.TabStop = false;
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.label2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label2.Location = new System.Drawing.Point(35, 6);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(146, 31);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Latest Tasks";
+            // 
+            // werknemers
+            // 
+            this.werknemers.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.werknemers.Location = new System.Drawing.Point(32, 87);
+            this.werknemers.Name = "werknemers";
+            this.werknemers.RowTemplate.Height = 25;
+            this.werknemers.Size = new System.Drawing.Size(491, 150);
+            this.werknemers.TabIndex = 2;
             // 
             // FormDashboard
             // 
@@ -225,18 +252,20 @@
             this.Name = "FormDashboard";
             this.Text = "FormDashboard";
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProjects)).EndInit();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.panel6.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTasks)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.werknemers)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -256,5 +285,7 @@
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private DataGridView dgvProjects;
+        private DataGridView werknemers;
     }
 }

@@ -5,10 +5,6 @@ using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using System;
 using System.Threading.Tasks;
-
-
-
-
 namespace debugGUI
 {
     public partial class Form1 : Form
@@ -17,13 +13,36 @@ namespace debugGUI
         private IconButton currentButton;
         readonly Color ButtonColor =  Color.FromArgb(115, 103, 240);
         private Form activeForm;
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
         public Form1()
         {
-            InitializeComponent(); 
+           
+            InitializeComponent();
+            UserInfo();
+
         }
 
-         
+        public void UserInfo()
+        {
+            // need username fro login 
+            UsernameLabel.Text = Form2.username;
+           // role = ;
+        }
+
+        private void GetShortStats()
+        {
+            // function to display the stats inside the topbar that is always visible as quick way to see vital info
+           
+            String pro = "SELECT * FROM projects";
+            String tms = "SELECT * FROM teams";
+            String tsk = "SELECT * FROM tasks";
+
+            SqlDataAdapter projects = new SqlDataAdapter(pro, conn);
+            SqlDataAdapter teams = new SqlDataAdapter(tms, conn);
+            SqlDataAdapter tasks = new SqlDataAdapter(tsk, conn);
+          
+        } 
 
         private void ActivateButton(object btnSender)
         {

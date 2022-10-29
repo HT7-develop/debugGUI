@@ -15,6 +15,8 @@ namespace debugGUI
 {
     public partial class Form2 : Form
     {
+        public static string username = "";
+        public static string password = "";
         public Form2()
         {
             InitializeComponent();
