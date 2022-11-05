@@ -17,6 +17,7 @@ namespace debugGUI
     {
         public static string username = "";
         public static string password = "";
+        public static int role;
         public Form2()
         {
             InitializeComponent();
@@ -36,8 +37,7 @@ namespace debugGUI
 
         private void LoginUser(object sender, EventArgs e)
         {
-            // compare input with DB and call Form1 (dashbord) as a class
-            String username, password;
+            // compare input with DB and call Form1 (dashboard) as a class
             username = usernameBox.Text;
             password = passwordBox.Text;
 
@@ -46,25 +46,23 @@ namespace debugGUI
                 //conn.Open();
                 String querry = "SELECT * FROM users WHERE name = '"+usernameBox.Text+"' AND password = '"+passwordBox.Text+"'";
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
-              
                 DataTable dt = new DataTable();
                 sda.Fill(dt);
 
                 if(dt.Rows.Count > 0 )
                 {
-                    //username = usernameBox.Text;
-                    //password = passwordBox.Text;
-
+                    username = usernameBox.Text;
+                    password = passwordBox.Text;
+                    
                     Form Dashboard = new Form1();
                     Dashboard.Show();
                     this.Hide();
                 }
                 else 
                 {
-                    MessageBox.Show("Signin Error", "Invalid credentials");
+                    MessageBox.Show("Invalid credentials", "Signin Error");
                     usernameBox.Clear();
                     passwordBox.Clear();
-
                     usernameBox.Focus();
                 }
             }

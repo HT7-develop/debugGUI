@@ -15,30 +15,29 @@ namespace debugGUI
     public partial class FormDashboard : Form
     {
         private HrKoppeling hrKoppeling = new HrKoppeling("http://localhost:8008");
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
         public FormDashboard()
         {
             InitializeComponent();
-            filltasks();
+            Filltasks();
             FillProjects();
-            FillWerknemers();
+            FillTeams();
         }
-        private void filltasks()
+        private void Filltasks()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             conn.Open();
-            String querry = "SELECT * FROM tasks";
-
+            String querry = "SELECT title , beschrijving , status , looptijd , gebruikte_uren FROM tasks";
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvTasks.DataSource = dt;
             conn.Close();
+
         }
 
         private void FillProjects()
         {
-            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             conn.Open();
             String querry = "SELECT * FROM projects";
 
@@ -56,8 +55,9 @@ namespace debugGUI
             insertCommand.Parameters.Add("@Naam", SqlDbType.VarChar, 50);
 
             sda.InsertCommand = insertCommand;
-
+            dgvProjects.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             conn.Close();
+
         }
 
         private void FillWerknemers()
@@ -78,20 +78,25 @@ namespace debugGUI
                 dt.Rows.Add(row);
             }
 
-            werknemers.DataSource = dt;
+            teams.DataSource = dt;
+            conn.Close();
+
         }
 
-        private void dgvTasks_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void FillTeams()
         {
+            conn.Open();
+            String querry = "SELECT * FROM teams";
+            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            teams.DataSource = dt;
+            teams.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            conn.Close();
 
         }
 
-        private void dgvProjects_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void bla(object sender, DataGridViewRowEventArgs e)
+        private void Projects_Click(object sender, EventArgs e)
         {
 
         }

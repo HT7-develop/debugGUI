@@ -38,13 +38,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.UsernameLabel = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
+            this.UserRole = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -135,7 +132,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             // 
@@ -150,33 +147,24 @@
             // 
             resources.ApplyResources(this.panel3, "panel3");
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.label2);
             this.panel3.Controls.Add(this.panel1);
             this.panel3.Name = "panel3";
             this.panel3.MouseDown += new System.Windows.Forms.MouseEventHandler(this.dragForm);
             // 
-            // label2
-            // 
-            resources.ApplyResources(this.label2, "label2");
-            this.label2.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label2.Name = "label2";
-            // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.UserRole);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.UsernameLabel);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
-            // label4
+            // UserRole
             // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.label4.Name = "label4";
+            resources.ApplyResources(this.UserRole, "UserRole");
+            this.UserRole.BackColor = System.Drawing.Color.Transparent;
+            this.UserRole.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.UserRole.Name = "UserRole";
             // 
             // pictureBox1
             // 
@@ -192,31 +180,19 @@
             resources.ApplyResources(this.panelDesktopPane, "panelDesktopPane");
             this.panelDesktopPane.Name = "panelDesktopPane";
             // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label1.Name = "label1";
-            // 
-            // label5
-            // 
-            resources.ApplyResources(this.label5, "label5");
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label5.Name = "label5";
-            // 
             // Form1
             // 
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             resources.ApplyResources(this, "$this");
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
             this.Controls.Add(this.panelDesktopPane);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "Form1";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.CheckKeyDownForm);
             this.panelMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
@@ -230,7 +206,7 @@
         private Panel panel2;
         private Label UsernameLabel;
         private Panel panel3;
-        private Label label4;
+        private Label UserRole;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton DashboardButton;
         private FontAwesome.Sharp.IconButton TeamsButton;
@@ -239,8 +215,5 @@
         private FontAwesome.Sharp.IconButton ExitButton;
         private Panel panel1;
         private Panel panelDesktopPane;
-        private Label label2;
-        private Label label5;
-        private Label label1;
     }
 }

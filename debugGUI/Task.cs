@@ -11,23 +11,29 @@ namespace debugGUI
 {
     internal class Task
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
-        //function for creating new tasks
-        public void CreateTask()
+        public int Id { get; }
+        public string Beschrijving { get; set; }
+        public string Title { get; set; }
+        public string Status { get; set; }
+        public int Looptijd { get; set; }
+        public int Opvolger_Id { get; set; }
+        public int Project_Id { get; set; }
+        public int Gebruikte_Uren { get; set; }
+        public int Werknemer_Id { get; set; }
+
+        public Task(int id, string beschrijving, string title, string status,int looptijd, int opvolger_id, int project_id, int gebruikte_uren, int werknemer_id)
         {
+            Id = id;
+            Beschrijving = beschrijving;
+            Title = title;
+            Status = status;
+            Looptijd = looptijd;
+            Opvolger_Id = opvolger_id;
+            Project_Id = project_id;
+            Gebruikte_Uren = gebruikte_uren;
+            Werknemer_Id = werknemer_id;
 
-        }
-
-        //function for retrieving tasks 
-       public void GetTasks()
-        {
-            conn.Open();
-            String querry = "SELECT * FROM tasks";
-            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
-            DataTable dt = new DataTable();
-            sda.Fill(dt);
-            conn.Close();
         }
     }
 }

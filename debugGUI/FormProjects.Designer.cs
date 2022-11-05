@@ -28,22 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LeftSide = new System.Windows.Forms.Panel();
             this.CreateProject = new System.Windows.Forms.Panel();
-            this.TeamDropdown = new System.Windows.Forms.ComboBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
+            this.DescriptionText = new System.Windows.Forms.RichTextBox();
+            this.TeamsCombo = new System.Windows.Forms.ComboBox();
+            this.StartDateActual = new System.Windows.Forms.Label();
+            this.StartDate_Label = new System.Windows.Forms.Label();
+            this.EndDateActual = new System.Windows.Forms.Label();
+            this.EndDate_Label = new System.Windows.Forms.Label();
+            this.TeamCombo_Label = new System.Windows.Forms.Label();
+            this.NameActual = new System.Windows.Forms.Label();
+            this.Description_Label = new System.Windows.Forms.Label();
+            this.Name_Label = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.ViewProjects = new System.Windows.Forms.Panel();
+            this.Project_top_Label = new System.Windows.Forms.Panel();
+            this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
+            this.Projects = new System.Windows.Forms.Label();
+            this.ProjectsDatatable = new System.Windows.Forms.DataGridView();
             this.RightSide = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
@@ -56,15 +67,15 @@
             this.label9 = new System.Windows.Forms.Label();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.ProjectsDatatable = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.LeftSide.SuspendLayout();
             this.CreateProject.SuspendLayout();
             this.ViewProjects.SuspendLayout();
-            this.RightSide.SuspendLayout();
+            this.Project_top_Label.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).BeginInit();
+            this.RightSide.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // LeftSide
@@ -81,16 +92,16 @@
             // CreateProject
             // 
             this.CreateProject.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.CreateProject.Controls.Add(this.TeamDropdown);
-            this.CreateProject.Controls.Add(this.label15);
-            this.CreateProject.Controls.Add(this.label16);
-            this.CreateProject.Controls.Add(this.label13);
-            this.CreateProject.Controls.Add(this.label14);
-            this.CreateProject.Controls.Add(this.label5);
-            this.CreateProject.Controls.Add(this.label3);
-            this.CreateProject.Controls.Add(this.label2);
-            this.CreateProject.Controls.Add(this.label1);
-            this.CreateProject.Controls.Add(this.panel4);
+            this.CreateProject.Controls.Add(this.DescriptionText);
+            this.CreateProject.Controls.Add(this.TeamsCombo);
+            this.CreateProject.Controls.Add(this.StartDateActual);
+            this.CreateProject.Controls.Add(this.StartDate_Label);
+            this.CreateProject.Controls.Add(this.EndDateActual);
+            this.CreateProject.Controls.Add(this.EndDate_Label);
+            this.CreateProject.Controls.Add(this.TeamCombo_Label);
+            this.CreateProject.Controls.Add(this.NameActual);
+            this.CreateProject.Controls.Add(this.Description_Label);
+            this.CreateProject.Controls.Add(this.Name_Label);
             this.CreateProject.Controls.Add(this.iconButton3);
             this.CreateProject.Controls.Add(this.iconButton2);
             this.CreateProject.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -99,115 +110,123 @@
             this.CreateProject.Size = new System.Drawing.Size(680, 317);
             this.CreateProject.TabIndex = 1;
             // 
-            // TeamDropdown
+            // DescriptionText
             // 
-            this.TeamDropdown.FormattingEnabled = true;
-            this.TeamDropdown.Location = new System.Drawing.Point(30, 113);
-            this.TeamDropdown.Name = "TeamDropdown";
-            this.TeamDropdown.Size = new System.Drawing.Size(235, 23);
-            this.TeamDropdown.TabIndex = 0;
+            this.DescriptionText.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.DescriptionText.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.DescriptionText.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DescriptionText.ForeColor = System.Drawing.Color.White;
+            this.DescriptionText.Location = new System.Drawing.Point(303, 56);
+            this.DescriptionText.Margin = new System.Windows.Forms.Padding(5);
+            this.DescriptionText.Name = "DescriptionText";
+            this.DescriptionText.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
+            this.DescriptionText.Size = new System.Drawing.Size(347, 201);
+            this.DescriptionText.TabIndex = 30;
+            this.DescriptionText.Text = "";
             // 
-            // label15
+            // TeamsCombo
             // 
-            this.label15.AutoSize = true;
-            this.label15.BackColor = System.Drawing.Color.Transparent;
-            this.label15.ForeColor = System.Drawing.Color.White;
-            this.label15.Location = new System.Drawing.Point(30, 182);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(89, 15);
-            this.label15.TabIndex = 29;
-            this.label15.Text = "StartDateActual";
+            this.TeamsCombo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.TeamsCombo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.TeamsCombo.ForeColor = System.Drawing.Color.White;
+            this.TeamsCombo.FormattingEnabled = true;
+            this.TeamsCombo.Location = new System.Drawing.Point(28, 121);
+            this.TeamsCombo.Name = "TeamsCombo";
+            this.TeamsCombo.Size = new System.Drawing.Size(235, 23);
+            this.TeamsCombo.TabIndex = 0;
             // 
-            // label16
+            // StartDateActual
             // 
-            this.label16.AutoSize = true;
-            this.label16.BackColor = System.Drawing.Color.Transparent;
-            this.label16.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label16.ForeColor = System.Drawing.Color.White;
-            this.label16.Location = new System.Drawing.Point(30, 159);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(69, 20);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Start Date";
+            this.StartDateActual.AutoSize = true;
+            this.StartDateActual.BackColor = System.Drawing.Color.Transparent;
+            this.StartDateActual.ForeColor = System.Drawing.Color.White;
+            this.StartDateActual.Location = new System.Drawing.Point(28, 210);
+            this.StartDateActual.Name = "StartDateActual";
+            this.StartDateActual.Size = new System.Drawing.Size(89, 15);
+            this.StartDateActual.TabIndex = 29;
+            this.StartDateActual.Text = "StartDateActual";
             // 
-            // label13
+            // StartDate_Label
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.Color.Transparent;
-            this.label13.ForeColor = System.Drawing.Color.White;
-            this.label13.Location = new System.Drawing.Point(177, 182);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(90, 15);
-            this.label13.TabIndex = 27;
-            this.label13.Text = "DeadLineActual";
+            this.StartDate_Label.AutoSize = true;
+            this.StartDate_Label.BackColor = System.Drawing.Color.Transparent;
+            this.StartDate_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.StartDate_Label.ForeColor = System.Drawing.Color.White;
+            this.StartDate_Label.Location = new System.Drawing.Point(28, 187);
+            this.StartDate_Label.Name = "StartDate_Label";
+            this.StartDate_Label.Size = new System.Drawing.Size(69, 20);
+            this.StartDate_Label.TabIndex = 28;
+            this.StartDate_Label.Text = "Start Date";
             // 
-            // label14
+            // EndDateActual
             // 
-            this.label14.AutoSize = true;
-            this.label14.BackColor = System.Drawing.Color.Transparent;
-            this.label14.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label14.ForeColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(177, 159);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(67, 20);
-            this.label14.TabIndex = 26;
-            this.label14.Text = "Deadline ";
+            this.EndDateActual.AutoSize = true;
+            this.EndDateActual.BackColor = System.Drawing.Color.Transparent;
+            this.EndDateActual.ForeColor = System.Drawing.Color.White;
+            this.EndDateActual.Location = new System.Drawing.Point(175, 210);
+            this.EndDateActual.Name = "EndDateActual";
+            this.EndDateActual.Size = new System.Drawing.Size(85, 15);
+            this.EndDateActual.TabIndex = 27;
+            this.EndDateActual.Text = "EndDateActual";
             // 
-            // label5
+            // EndDate_Label
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(30, 90);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 20);
-            this.label5.TabIndex = 22;
-            this.label5.Text = "Team";
+            this.EndDate_Label.AutoSize = true;
+            this.EndDate_Label.BackColor = System.Drawing.Color.Transparent;
+            this.EndDate_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.EndDate_Label.ForeColor = System.Drawing.Color.White;
+            this.EndDate_Label.Location = new System.Drawing.Point(175, 187);
+            this.EndDate_Label.Name = "EndDate_Label";
+            this.EndDate_Label.Size = new System.Drawing.Size(65, 20);
+            this.EndDate_Label.TabIndex = 26;
+            this.EndDate_Label.Text = "End Date";
             // 
-            // label3
+            // TeamCombo_Label
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.Transparent;
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(29, 47);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 15);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "NameActual";
+            this.TeamCombo_Label.AutoSize = true;
+            this.TeamCombo_Label.BackColor = System.Drawing.Color.Transparent;
+            this.TeamCombo_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.TeamCombo_Label.ForeColor = System.Drawing.Color.White;
+            this.TeamCombo_Label.Location = new System.Drawing.Point(28, 98);
+            this.TeamCombo_Label.Name = "TeamCombo_Label";
+            this.TeamCombo_Label.Size = new System.Drawing.Size(43, 20);
+            this.TeamCombo_Label.TabIndex = 22;
+            this.TeamCombo_Label.Text = "Team";
             // 
-            // label2
+            // NameActual
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(303, 16);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 20);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Description";
+            this.NameActual.AutoSize = true;
+            this.NameActual.BackColor = System.Drawing.Color.Transparent;
+            this.NameActual.ForeColor = System.Drawing.Color.White;
+            this.NameActual.Location = new System.Drawing.Point(28, 57);
+            this.NameActual.Name = "NameActual";
+            this.NameActual.Size = new System.Drawing.Size(73, 15);
+            this.NameActual.TabIndex = 21;
+            this.NameActual.Text = "NameActual";
             // 
-            // label1
+            // Description_Label
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(29, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 20);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Name";
+            this.Description_Label.AutoSize = true;
+            this.Description_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Description_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Description_Label.ForeColor = System.Drawing.Color.White;
+            this.Description_Label.Location = new System.Drawing.Point(303, 24);
+            this.Description_Label.Name = "Description_Label";
+            this.Description_Label.Size = new System.Drawing.Size(80, 20);
+            this.Description_Label.TabIndex = 20;
+            this.Description_Label.Text = "Description";
             // 
-            // panel4
+            // Name_Label
             // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            this.panel4.Location = new System.Drawing.Point(303, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Padding = new System.Windows.Forms.Padding(10);
-            this.panel4.Size = new System.Drawing.Size(348, 233);
-            this.panel4.TabIndex = 18;
+            this.Name_Label.AutoSize = true;
+            this.Name_Label.BackColor = System.Drawing.Color.Transparent;
+            this.Name_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Name_Label.ForeColor = System.Drawing.Color.White;
+            this.Name_Label.Location = new System.Drawing.Point(28, 34);
+            this.Name_Label.Name = "Name_Label";
+            this.Name_Label.Size = new System.Drawing.Size(44, 20);
+            this.Name_Label.TabIndex = 19;
+            this.Name_Label.Text = "Name";
             // 
             // iconButton3
             // 
@@ -220,13 +239,14 @@
             this.iconButton3.IconColor = System.Drawing.Color.White;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.IconSize = 20;
-            this.iconButton3.Location = new System.Drawing.Point(159, 253);
+            this.iconButton3.Location = new System.Drawing.Point(159, 275);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(106, 30);
             this.iconButton3.TabIndex = 17;
             this.iconButton3.Text = "DELETE";
             this.iconButton3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton3.UseVisualStyleBackColor = false;
+            this.iconButton3.Click += new System.EventHandler(this.DeleteProject);
             // 
             // iconButton2
             // 
@@ -235,21 +255,23 @@
             this.iconButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.iconButton2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.iconButton2.ForeColor = System.Drawing.Color.White;
-            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconButton2.IconChar = FontAwesome.Sharp.IconChar.PencilAlt;
             this.iconButton2.IconColor = System.Drawing.Color.White;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.IconSize = 20;
-            this.iconButton2.Location = new System.Drawing.Point(33, 253);
+            this.iconButton2.Location = new System.Drawing.Point(33, 275);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(93, 30);
             this.iconButton2.TabIndex = 16;
-            this.iconButton2.Text = "SAVE";
+            this.iconButton2.Text = "EDIT";
             this.iconButton2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton2.UseVisualStyleBackColor = false;
+            this.iconButton2.Click += new System.EventHandler(this.EditButtonClick);
             // 
             // ViewProjects
             // 
             this.ViewProjects.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.ViewProjects.Controls.Add(this.Project_top_Label);
             this.ViewProjects.Controls.Add(this.ProjectsDatatable);
             this.ViewProjects.Dock = System.Windows.Forms.DockStyle.Top;
             this.ViewProjects.Location = new System.Drawing.Point(0, 0);
@@ -257,10 +279,115 @@
             this.ViewProjects.Size = new System.Drawing.Size(680, 323);
             this.ViewProjects.TabIndex = 0;
             // 
+            // Project_top_Label
+            // 
+            this.Project_top_Label.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.Project_top_Label.Controls.Add(this.iconPictureBox1);
+            this.Project_top_Label.Controls.Add(this.Projects);
+            this.Project_top_Label.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Project_top_Label.Location = new System.Drawing.Point(0, 0);
+            this.Project_top_Label.Name = "Project_top_Label";
+            this.Project_top_Label.Size = new System.Drawing.Size(680, 54);
+            this.Project_top_Label.TabIndex = 1;
+            // 
+            // iconPictureBox1
+            // 
+            this.iconPictureBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox1.Location = new System.Drawing.Point(12, 12);
+            this.iconPictureBox1.Name = "iconPictureBox1";
+            this.iconPictureBox1.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox1.TabIndex = 1;
+            this.iconPictureBox1.TabStop = false;
+            // 
+            // Projects
+            // 
+            this.Projects.AutoSize = true;
+            this.Projects.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.Projects.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.Projects.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.Projects.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.Projects.Location = new System.Drawing.Point(51, 12);
+            this.Projects.Name = "Projects";
+            this.Projects.Size = new System.Drawing.Size(101, 31);
+            this.Projects.TabIndex = 0;
+            this.Projects.Text = "Projects";
+            this.Projects.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // ProjectsDatatable
+            // 
+            this.ProjectsDatatable.AllowUserToAddRows = false;
+            this.ProjectsDatatable.AllowUserToDeleteRows = false;
+            this.ProjectsDatatable.AllowUserToResizeColumns = false;
+            this.ProjectsDatatable.AllowUserToResizeRows = false;
+            this.ProjectsDatatable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.ProjectsDatatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectsDatatable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ProjectsDatatable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.ProjectsDatatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.DefaultCellStyle = dataGridViewCellStyle2;
+            this.ProjectsDatatable.EnableHeadersVisualStyles = false;
+            this.ProjectsDatatable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.ProjectsDatatable.Location = new System.Drawing.Point(12, 67);
+            this.ProjectsDatatable.Margin = new System.Windows.Forms.Padding(0);
+            this.ProjectsDatatable.MultiSelect = false;
+            this.ProjectsDatatable.Name = "ProjectsDatatable";
+            this.ProjectsDatatable.ReadOnly = true;
+            this.ProjectsDatatable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.ProjectsDatatable.RowHeadersWidth = 51;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.ProjectsDatatable.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
+            this.ProjectsDatatable.RowTemplate.Height = 40;
+            this.ProjectsDatatable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProjectsDatatable.ShowCellErrors = false;
+            this.ProjectsDatatable.ShowCellToolTips = false;
+            this.ProjectsDatatable.ShowEditingIcon = false;
+            this.ProjectsDatatable.ShowRowErrors = false;
+            this.ProjectsDatatable.Size = new System.Drawing.Size(651, 241);
+            this.ProjectsDatatable.TabIndex = 0;
+            this.ProjectsDatatable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.selectProject);
+            // 
             // RightSide
             // 
             this.RightSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.RightSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.RightSide.Controls.Add(this.panel1);
             this.RightSide.Controls.Add(this.textBox5);
             this.RightSide.Controls.Add(this.textBox4);
             this.RightSide.Controls.Add(this.label18);
@@ -278,12 +405,53 @@
             this.RightSide.Size = new System.Drawing.Size(452, 663);
             this.RightSide.TabIndex = 1;
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.panel1.Controls.Add(this.iconPictureBox2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(452, 54);
+            this.panel1.TabIndex = 35;
+            // 
+            // iconPictureBox2
+            // 
+            this.iconPictureBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.iconPictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Plus;
+            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox2.Location = new System.Drawing.Point(12, 12);
+            this.iconPictureBox2.Name = "iconPictureBox2";
+            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.iconPictureBox2.TabIndex = 1;
+            this.iconPictureBox2.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label1.Location = new System.Drawing.Point(51, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(140, 31);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "New Project";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.textBox5.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox5.Location = new System.Drawing.Point(95, 204);
+            this.textBox5.ForeColor = System.Drawing.Color.White;
+            this.textBox5.Location = new System.Drawing.Point(94, 261);
             this.textBox5.Margin = new System.Windows.Forms.Padding(10);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(339, 16);
@@ -294,7 +462,8 @@
             this.textBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox4.Location = new System.Drawing.Point(95, 165);
+            this.textBox4.ForeColor = System.Drawing.Color.White;
+            this.textBox4.Location = new System.Drawing.Point(94, 222);
             this.textBox4.Margin = new System.Windows.Forms.Padding(10);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(339, 16);
@@ -306,7 +475,7 @@
             this.label18.BackColor = System.Drawing.Color.Transparent;
             this.label18.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label18.ForeColor = System.Drawing.Color.White;
-            this.label18.Location = new System.Drawing.Point(17, 200);
+            this.label18.Location = new System.Drawing.Point(16, 257);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(65, 20);
             this.label18.TabIndex = 32;
@@ -318,7 +487,7 @@
             this.label17.BackColor = System.Drawing.Color.Transparent;
             this.label17.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(14, 161);
+            this.label17.Location = new System.Drawing.Point(13, 218);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(69, 20);
             this.label17.TabIndex = 31;
@@ -329,7 +498,8 @@
             this.textBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox2.Location = new System.Drawing.Point(95, 80);
+            this.textBox2.ForeColor = System.Drawing.Color.White;
+            this.textBox2.Location = new System.Drawing.Point(94, 137);
             this.textBox2.Margin = new System.Windows.Forms.Padding(10);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(339, 16);
@@ -340,7 +510,8 @@
             this.textBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.textBox1.Location = new System.Drawing.Point(95, 38);
+            this.textBox1.ForeColor = System.Drawing.Color.White;
+            this.textBox1.Location = new System.Drawing.Point(94, 95);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(339, 16);
             this.textBox1.TabIndex = 28;
@@ -388,7 +559,7 @@
             this.label9.BackColor = System.Drawing.Color.Transparent;
             this.label9.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(33, 76);
+            this.label9.Location = new System.Drawing.Point(32, 133);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 20);
             this.label9.TabIndex = 26;
@@ -411,8 +582,10 @@
             this.iconButton1.Size = new System.Drawing.Size(179, 30);
             this.iconButton1.TabIndex = 21;
             this.iconButton1.Text = "New Project";
+            this.iconButton1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.iconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.iconButton1.UseVisualStyleBackColor = false;
+            this.iconButton1.Click += new System.EventHandler(this.NewProject);
             // 
             // label10
             // 
@@ -420,46 +593,16 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(32, 38);
+            this.label10.Location = new System.Drawing.Point(31, 95);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 20);
             this.label10.TabIndex = 25;
             this.label10.Text = "Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // ProjectsDatatable
-            // 
-            this.ProjectsDatatable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.ProjectsDatatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ProjectsDatatable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3});
-            this.ProjectsDatatable.Location = new System.Drawing.Point(29, 18);
-            this.ProjectsDatatable.Name = "ProjectsDatatable";
-            this.ProjectsDatatable.RowTemplate.Height = 25;
-            this.ProjectsDatatable.Size = new System.Drawing.Size(622, 284);
-            this.ProjectsDatatable.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "id";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "beschrijving";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "naam";
-            this.Column3.Name = "Column3";
-            // 
             // FormProjects
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1153, 663);
             this.Controls.Add(this.RightSide);
@@ -471,9 +614,15 @@
             this.CreateProject.ResumeLayout(false);
             this.CreateProject.PerformLayout();
             this.ViewProjects.ResumeLayout(false);
+            this.Project_top_Label.ResumeLayout(false);
+            this.Project_top_Label.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).EndInit();
             this.RightSide.ResumeLayout(false);
             this.RightSide.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -486,16 +635,15 @@
         private Panel RightSide;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
-        private ComboBox TeamDropdown;
-        private Label label15;
-        private Label label16;
-        private Label label13;
-        private Label label14;
-        private Label label5;
-        private Label label3;
-        private Label label2;
-        private Label label1;
-        private Panel panel4;
+        private ComboBox TeamsCombo;
+        private Label StartDateActual;
+        private Label StartDate_Label;
+        private Label EndDateActual;
+        private Label EndDate_Label;
+        private Label TeamCombo_Label;
+        private Label NameActual;
+        private Label Description_Label;
+        private Label Name_Label;
         private TextBox textBox5;
         private TextBox textBox4;
         private Label label18;
@@ -509,8 +657,12 @@
         private FontAwesome.Sharp.IconButton iconButton1;
         private Label label10;
         private DataGridView ProjectsDatatable;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
+        private RichTextBox DescriptionText;
+        private Panel Project_top_Label;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
+        private Label Projects;
+        private Panel panel1;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
+        private Label label1;
     }
 }
