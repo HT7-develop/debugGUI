@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panelMenu = new System.Windows.Forms.Panel();
             this.ExitButton = new FontAwesome.Sharp.IconButton();
-            this.TeamsButton = new FontAwesome.Sharp.IconButton();
+            this.EmployeesButton = new FontAwesome.Sharp.IconButton();
             this.TasksButton = new FontAwesome.Sharp.IconButton();
             this.ProjectsButton = new FontAwesome.Sharp.IconButton();
             this.DashboardButton = new FontAwesome.Sharp.IconButton();
@@ -52,7 +52,7 @@
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
             this.panelMenu.Controls.Add(this.ExitButton);
-            this.panelMenu.Controls.Add(this.TeamsButton);
+            this.panelMenu.Controls.Add(this.EmployeesButton);
             this.panelMenu.Controls.Add(this.TasksButton);
             this.panelMenu.Controls.Add(this.ProjectsButton);
             this.panelMenu.Controls.Add(this.DashboardButton);
@@ -74,19 +74,19 @@
             this.ExitButton.UseVisualStyleBackColor = false;
             this.ExitButton.Click += new System.EventHandler(this.ExitButton_Click);
             // 
-            // TeamsButton
+            // EmployeesButton
             // 
-            this.TeamsButton.BackColor = System.Drawing.Color.Transparent;
-            resources.ApplyResources(this.TeamsButton, "TeamsButton");
-            this.TeamsButton.FlatAppearance.BorderSize = 0;
-            this.TeamsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            this.TeamsButton.ForeColor = System.Drawing.Color.Gainsboro;
-            this.TeamsButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
-            this.TeamsButton.IconColor = System.Drawing.Color.White;
-            this.TeamsButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.TeamsButton.Name = "TeamsButton";
-            this.TeamsButton.UseVisualStyleBackColor = false;
-            this.TeamsButton.Click += new System.EventHandler(this.TeamsButton_Click);
+            this.EmployeesButton.BackColor = System.Drawing.Color.Transparent;
+            resources.ApplyResources(this.EmployeesButton, "EmployeesButton");
+            this.EmployeesButton.FlatAppearance.BorderSize = 0;
+            this.EmployeesButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.EmployeesButton.ForeColor = System.Drawing.Color.Gainsboro;
+            this.EmployeesButton.IconChar = FontAwesome.Sharp.IconChar.PeopleGroup;
+            this.EmployeesButton.IconColor = System.Drawing.Color.White;
+            this.EmployeesButton.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.EmployeesButton.Name = "EmployeesButton";
+            this.EmployeesButton.UseVisualStyleBackColor = false;
+            this.EmployeesButton.Click += new System.EventHandler(this.TeamsButton_Click);
             // 
             // TasksButton
             // 
@@ -209,7 +209,7 @@
         private Label UserRole;
         private PictureBox pictureBox1;
         private FontAwesome.Sharp.IconButton DashboardButton;
-        private FontAwesome.Sharp.IconButton TeamsButton;
+        private FontAwesome.Sharp.IconButton EmployeesButton;
         private FontAwesome.Sharp.IconButton TasksButton;
         private FontAwesome.Sharp.IconButton ProjectsButton;
         private FontAwesome.Sharp.IconButton ExitButton;

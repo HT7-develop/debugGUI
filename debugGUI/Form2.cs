@@ -66,9 +66,9 @@ namespace debugGUI
                     usernameBox.Focus();
                 }
             }
-            catch
+            catch(Exception error)
             {
-                MessageBox.Show("ERROR");
+                MessageBox.Show($"{error}");
             }
             finally
             {

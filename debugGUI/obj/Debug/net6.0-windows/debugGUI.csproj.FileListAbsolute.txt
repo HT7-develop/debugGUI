@@ -28,4 +28,4 @@ C:\Users\incub\source\repos\debugGUI\debugGUI\bin\Debug\net6.0-windows\runtimes\
 C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.FormDashboard.resources
 C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.FormTasks.resources
 C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.FormProjects.resources
-C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.FormTeams.resources
+C:\Users\incub\source\repos\debugGUI\debugGUI\obj\Debug\net6.0-windows\debugGUI.FormEmployee.resources

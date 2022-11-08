@@ -1,4 +1,5 @@
 using FontAwesome.Sharp;
+using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Data.SqlClient;
 using System.Runtime.InteropServices;
@@ -11,6 +12,8 @@ namespace debugGUI
         readonly Color ButtonColor = Color.FromArgb(115, 103, 240);
         private Form activeForm;
         SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+        public static int adminResult;
+        public static int userId;
 
         public Form1()
         {
@@ -26,20 +29,49 @@ namespace debugGUI
             UsernameLabel.Text = UserName;
 
             // check user role with name entered in login
-            //TODO: check waarom -1 terug komt
-            Console.Write($"Above sql command");
-            SqlCommand command = new SqlCommand("SELECT admin FROM users WHERE name = '"+UserName+"'", conn);
-            int result = command.ExecuteNonQuery();
-            Console.Write($"This is result var {result}");
-            if (result == 1)
+            SqlCommand command = new SqlCommand($"SELECT admin,id FROM users WHERE name = '{UserName}'", conn);
+            SqlDataReader reader = command.ExecuteReader();
+            adminResult = 0;
+           
+            if (reader.HasRows)
+            {
+                while (reader.Read())
+                {
+                    adminResult = Convert.ToInt32(reader[0]);
+                    userId = Convert.ToInt32(reader[1]);
+                }
+            }
+            else
+            {
+                Console.WriteLine("No rows found.");
+            }
+
+            if (adminResult == 1)
             {
                 UserRole.Text = "Admin";
-                UserRole.ForeColor = Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+                UserRole.BackColor = Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+                UserRole.ForeColor = Color.White;
+
             }
             else
             {
                 UserRole.Text = "Project Member";
-                UserRole.ForeColor = Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+                UserRole.BackColor = Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+                UserRole.ForeColor = Color.White;
+            }
+            // Checkrole function , to hide/display elements on page
+            CheckRole(adminResult);
+        }
+
+        private void CheckRole(int admin)
+        {
+            // this function will be called after rendering all elements to check if user 
+            // is admin or not, and accordingly will hide/show buttons/tabs 
+            if (admin != 1)
+            {
+                EmployeesButton.Visible = false;
+                ProjectsButton.Visible = false;
+
             }
         }
 
@@ -102,7 +134,7 @@ namespace debugGUI
 
         private void TeamsButton_Click(object sender, EventArgs e)
         {
-            OpenTab(new FormTeams(), sender);
+            OpenTab(new FormEmployee(), sender);
         }
 
 
@@ -120,21 +152,10 @@ namespace debugGUI
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-
-        private void CloseApp(object sender, EventArgs e)
-        {
-            // when click on button X on the sign in page, a messagebox will pop-up to ask for confirmation
-            DialogResult d;
-            d = MessageBox.Show("Are you sure you want to exit this application", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (d == DialogResult.Yes)
-            {
-                Application.Exit();
-            }
-        }
         private void ExitButton_Click(object sender, EventArgs e)
         {
             DialogResult d;
-            d = MessageBox.Show("Are you sure you want to exit this application", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            d = MessageBox.Show("Are you sure you want to exit this application", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.None);
             if (d == DialogResult.Yes)
             {
                 Application.Exit();
@@ -146,7 +167,7 @@ namespace debugGUI
             if (e.KeyCode == Keys.Escape)
             {
                 DialogResult d;
-                d = MessageBox.Show("Are you sure you want to exit this application", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                d = MessageBox.Show("Are you sure you want to exit this application", "Exit application", MessageBoxButtons.YesNo, MessageBoxIcon.None);
                 if (d == DialogResult.Yes)
                 {
                     Application.Exit();

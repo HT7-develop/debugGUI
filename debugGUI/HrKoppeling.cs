@@ -5,6 +5,7 @@ namespace hrtool
 {
     internal class HrKoppeling
     {
+        private readonly JsonSerializerOptions jsonOptions = new JsonSerializerOptions { PropertyNameCaseInsensitive = true};
         private readonly HttpClient client = new HttpClient();
 
         private string baseURL;
@@ -44,7 +45,7 @@ namespace hrtool
 
         }
 
-        public int[]? Beschikbaarheid(int werknemerId, int jaar, int weekNr)
+        public int[] Beschikbaarheid(int werknemerId, int jaar, int weekNr)
         {
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("Accept", "application/json");
@@ -56,7 +57,7 @@ namespace hrtool
                 var jsonString = stringTask.Result;
 
                 AvailabilityModel? availability =
-                    JsonSerializer.Deserialize<AvailabilityModel>(jsonString);
+                    JsonSerializer.Deserialize<AvailabilityModel>(jsonString, jsonOptions);
 
                 if (availability != null &&
                     availability.Availability != null &&
@@ -79,7 +80,7 @@ namespace hrtool
                 Console.WriteLine("HR systeem communicatiefout: " + ex.Message);
             }
 
-            return null;
+            return new int[0];
         }
     }
 }

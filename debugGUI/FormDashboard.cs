@@ -22,84 +22,55 @@ namespace debugGUI
             InitializeComponent();
             Filltasks();
             FillProjects();
-            FillTeams();
+            FillRaycoEmployeeDatatable();
         }
+        // function to fill tasks datatable with no filters for role
         private void Filltasks()
         {
             conn.Open();
-            String querry = "SELECT title , beschrijving , status , looptijd , gebruikte_uren FROM tasks";
+            String querry = "SELECT TOP(10) title , beschrijving , status , looptijd , gebruikte_uren FROM tasks";
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvTasks.DataSource = dt;
+            // custom settings to hide id column and make name column larger/have more weight
+            dgvTasks.Columns[0].Visible = false;
+            dgvTasks.Columns[1].FillWeight = 400;
+            dgvTasks.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
             conn.Close();
 
         }
-
+        // function to fill projects datatable with no filters for role
         private void FillProjects()
         {
             conn.Open();
             String querry = "SELECT * FROM projects";
-
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             dgvProjects.DataSource = dt;
-
-            var insertCommand = new SqlCommand(
-                "INSERT INTO projects (id, beschrijving, naam) " +
-                "VALUES (@Id, @Beschrijving, @Naam)", conn);
-
-            insertCommand.Parameters.Add("@Id", SqlDbType.Int);
-            insertCommand.Parameters.Add("@Beschrijving", SqlDbType.VarChar, -1);
-            insertCommand.Parameters.Add("@Naam", SqlDbType.VarChar, 50);
-
-            sda.InsertCommand = insertCommand;
+            // custom settings to hide id column and make name column larger/have more weight
+            dgvProjects.Columns[0].Visible = false;
+            dgvProjects.Columns[2].FillWeight = 400;
             dgvProjects.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             conn.Close();
 
         }
 
-        private void FillWerknemers()
-        {
-            var dt = new DataTable();
-
-            var colId = new DataColumn("id");
-            var colNaam = new DataColumn("naam");
-            dt.Columns.Add(colId);
-            dt.Columns.Add(colNaam);
-
-            foreach (var (id, naam) in hrKoppeling.WerknemerIndex())
-            {
-                var werknemer = new Werknemer(int.Parse(id), naam);
-                var row = dt.NewRow();
-                row["id"] = werknemer.Id;
-                row["naam"] = werknemer.Naam;
-                dt.Rows.Add(row);
-            }
-
-            teams.DataSource = dt;
-            conn.Close();
-
-        }
-
-        private void FillTeams()
+        private void FillRaycoEmployeeDatatable()
         {
             conn.Open();
-            String querry = "SELECT * FROM teams";
+            String querry = "SELECT id, name, admin FROM users";
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
             DataTable dt = new DataTable();
             sda.Fill(dt);
-            teams.DataSource = dt;
-            teams.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            EmployeeRaycoDatatable.DataSource = dt;
+            EmployeeRaycoDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            EmployeeRaycoDatatable.Columns[1].FillWeight = 300;
+
             conn.Close();
-
-        }
-
-        private void Projects_Click(object sender, EventArgs e)
-        {
-
         }
     }
 
-}
+}   
