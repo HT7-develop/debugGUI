@@ -28,10 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LeftSide = new System.Windows.Forms.Panel();
             this.ProjectsDatatable = new System.Windows.Forms.DataGridView();
             this.TopLabel = new System.Windows.Forms.Panel();
@@ -42,7 +42,11 @@
             this.Name_Label = new System.Windows.Forms.Label();
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
-            this.RightSide = new System.Windows.Forms.Panel();
+            this.GebruikteUren_actual = new System.Windows.Forms.Panel();
+            this.TotalGebruikteUren = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.Doorlooptijd_actual = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.FinishTaskButton = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
             this.Project_Id = new System.Windows.Forms.Label();
@@ -60,7 +64,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).BeginInit();
             this.TopLabel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            this.RightSide.SuspendLayout();
+            this.GebruikteUren_actual.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -86,25 +90,25 @@
             this.ProjectsDatatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProjectsDatatable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ProjectsDatatable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.ProjectsDatatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.DefaultCellStyle = dataGridViewCellStyle6;
             this.ProjectsDatatable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectsDatatable.EnableHeadersVisualStyles = false;
             this.ProjectsDatatable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
@@ -114,25 +118,25 @@
             this.ProjectsDatatable.Name = "ProjectsDatatable";
             this.ProjectsDatatable.ReadOnly = true;
             this.ProjectsDatatable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.ProjectsDatatable.RowHeadersVisible = false;
             this.ProjectsDatatable.RowHeadersWidth = 51;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowsDefaultCellStyle = dataGridViewCellStyle8;
             this.ProjectsDatatable.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
             this.ProjectsDatatable.RowTemplate.Height = 50;
             this.ProjectsDatatable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -190,11 +194,11 @@
             this.DescriptionActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.DescriptionActual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DescriptionActual.ForeColor = System.Drawing.Color.White;
-            this.DescriptionActual.Location = new System.Drawing.Point(13, 459);
+            this.DescriptionActual.Location = new System.Drawing.Point(13, 506);
             this.DescriptionActual.Margin = new System.Windows.Forms.Padding(5);
             this.DescriptionActual.Name = "DescriptionActual";
             this.DescriptionActual.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.DescriptionActual.Size = new System.Drawing.Size(376, 141);
+            this.DescriptionActual.Size = new System.Drawing.Size(375, 94);
             this.DescriptionActual.TabIndex = 30;
             this.DescriptionActual.Text = "";
             // 
@@ -204,7 +208,7 @@
             this.Description_Label.BackColor = System.Drawing.Color.Transparent;
             this.Description_Label.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.Description_Label.ForeColor = System.Drawing.Color.White;
-            this.Description_Label.Location = new System.Drawing.Point(13, 434);
+            this.Description_Label.Location = new System.Drawing.Point(13, 481);
             this.Description_Label.Name = "Description_Label";
             this.Description_Label.Size = new System.Drawing.Size(80, 20);
             this.Description_Label.TabIndex = 20;
@@ -262,30 +266,84 @@
             this.iconButton2.UseVisualStyleBackColor = false;
             this.iconButton2.Click += new System.EventHandler(this.UpdateButtonClick);
             // 
-            // RightSide
+            // GebruikteUren_actual
             // 
-            this.RightSide.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.RightSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
-            this.RightSide.Controls.Add(this.FinishTaskButton);
-            this.RightSide.Controls.Add(this.panel3);
-            this.RightSide.Controls.Add(this.Project_Id);
-            this.RightSide.Controls.Add(this.NameActual);
-            this.RightSide.Controls.Add(this.DescriptionActual);
-            this.RightSide.Controls.Add(this.panel1);
-            this.RightSide.Controls.Add(this.Description_Label);
-            this.RightSide.Controls.Add(this.NewProjectNameActual);
-            this.RightSide.Controls.Add(this.Name_Label);
-            this.RightSide.Controls.Add(this.label12);
-            this.RightSide.Controls.Add(this.iconButton3);
-            this.RightSide.Controls.Add(this.label11);
-            this.RightSide.Controls.Add(this.iconButton2);
-            this.RightSide.Controls.Add(this.NewProjectDescriptionActual);
-            this.RightSide.Controls.Add(this.iconButton1);
-            this.RightSide.Controls.Add(this.label10);
-            this.RightSide.Location = new System.Drawing.Point(748, 0);
-            this.RightSide.Name = "RightSide";
-            this.RightSide.Size = new System.Drawing.Size(405, 663);
-            this.RightSide.TabIndex = 1;
+            this.GebruikteUren_actual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.GebruikteUren_actual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.GebruikteUren_actual.Controls.Add(this.TotalGebruikteUren);
+            this.GebruikteUren_actual.Controls.Add(this.label3);
+            this.GebruikteUren_actual.Controls.Add(this.Doorlooptijd_actual);
+            this.GebruikteUren_actual.Controls.Add(this.label2);
+            this.GebruikteUren_actual.Controls.Add(this.FinishTaskButton);
+            this.GebruikteUren_actual.Controls.Add(this.panel3);
+            this.GebruikteUren_actual.Controls.Add(this.Project_Id);
+            this.GebruikteUren_actual.Controls.Add(this.NameActual);
+            this.GebruikteUren_actual.Controls.Add(this.DescriptionActual);
+            this.GebruikteUren_actual.Controls.Add(this.panel1);
+            this.GebruikteUren_actual.Controls.Add(this.Description_Label);
+            this.GebruikteUren_actual.Controls.Add(this.NewProjectNameActual);
+            this.GebruikteUren_actual.Controls.Add(this.Name_Label);
+            this.GebruikteUren_actual.Controls.Add(this.label12);
+            this.GebruikteUren_actual.Controls.Add(this.iconButton3);
+            this.GebruikteUren_actual.Controls.Add(this.label11);
+            this.GebruikteUren_actual.Controls.Add(this.iconButton2);
+            this.GebruikteUren_actual.Controls.Add(this.NewProjectDescriptionActual);
+            this.GebruikteUren_actual.Controls.Add(this.iconButton1);
+            this.GebruikteUren_actual.Controls.Add(this.label10);
+            this.GebruikteUren_actual.Location = new System.Drawing.Point(748, 0);
+            this.GebruikteUren_actual.Name = "GebruikteUren_actual";
+            this.GebruikteUren_actual.Size = new System.Drawing.Size(405, 663);
+            this.GebruikteUren_actual.TabIndex = 1;
+            // 
+            // TotalGebruikteUren
+            // 
+            this.TotalGebruikteUren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.TotalGebruikteUren.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TotalGebruikteUren.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TotalGebruikteUren.ForeColor = System.Drawing.Color.White;
+            this.TotalGebruikteUren.Location = new System.Drawing.Point(192, 462);
+            this.TotalGebruikteUren.Name = "TotalGebruikteUren";
+            this.TotalGebruikteUren.ReadOnly = true;
+            this.TotalGebruikteUren.Size = new System.Drawing.Size(139, 16);
+            this.TotalGebruikteUren.TabIndex = 48;
+            this.TotalGebruikteUren.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(192, 434);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(148, 20);
+            this.label3.TabIndex = 47;
+            this.label3.Text = "Totaal Gebruikte Uren ";
+            // 
+            // Doorlooptijd_actual
+            // 
+            this.Doorlooptijd_actual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.Doorlooptijd_actual.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.Doorlooptijd_actual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Doorlooptijd_actual.ForeColor = System.Drawing.Color.White;
+            this.Doorlooptijd_actual.Location = new System.Drawing.Point(14, 462);
+            this.Doorlooptijd_actual.Name = "Doorlooptijd_actual";
+            this.Doorlooptijd_actual.ReadOnly = true;
+            this.Doorlooptijd_actual.Size = new System.Drawing.Size(137, 16);
+            this.Doorlooptijd_actual.TabIndex = 46;
+            this.Doorlooptijd_actual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(12, 434);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(154, 20);
+            this.label2.TabIndex = 45;
+            this.label2.Text = "Verwachte Doorlooptijd";
             // 
             // FinishTaskButton
             // 
@@ -321,7 +379,7 @@
             this.Project_Id.AutoSize = true;
             this.Project_Id.BackColor = System.Drawing.Color.Transparent;
             this.Project_Id.ForeColor = System.Drawing.SystemColors.ActiveCaption;
-            this.Project_Id.Location = new System.Drawing.Point(443, 101);
+            this.Project_Id.Location = new System.Drawing.Point(331, 382);
             this.Project_Id.Name = "Project_Id";
             this.Project_Id.Size = new System.Drawing.Size(0, 15);
             this.Project_Id.TabIndex = 37;
@@ -465,7 +523,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1153, 663);
-            this.Controls.Add(this.RightSide);
+            this.Controls.Add(this.GebruikteUren_actual);
             this.Controls.Add(this.LeftSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormProjects";
@@ -475,8 +533,8 @@
             this.TopLabel.ResumeLayout(false);
             this.TopLabel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            this.RightSide.ResumeLayout(false);
-            this.RightSide.PerformLayout();
+            this.GebruikteUren_actual.ResumeLayout(false);
+            this.GebruikteUren_actual.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
@@ -487,7 +545,7 @@
         #endregion
 
         private Panel LeftSide;
-        private Panel RightSide;
+        private Panel GebruikteUren_actual;
         private FontAwesome.Sharp.IconButton iconButton3;
         private FontAwesome.Sharp.IconButton iconButton2;
         private Label Description_Label;
@@ -510,5 +568,9 @@
         private Panel TopLabel;
         private Panel panel3;
         private FontAwesome.Sharp.IconButton FinishTaskButton;
+        private TextBox Doorlooptijd_actual;
+        private Label label2;
+        private TextBox TotalGebruikteUren;
+        private Label label3;
     }
 }

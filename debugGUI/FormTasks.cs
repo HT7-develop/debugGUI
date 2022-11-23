@@ -25,17 +25,7 @@ namespace debugGUI
             FillDatatable();
         }
 
-        //private void CheckRole(int admin)
-        //{
-        //    // this function will be called after rendering all elements to check if user 
-        //    // is admin or not, and accordingly will hide/show buttons/tabs 
-        //    if (admin != 1)
-        //    {
-        //        EmployeesButton.Visible = false;
-        //        ProjectsButton.Visible = false;
-
-        //    }
-        //}
+       
         private void FillDatatable()
         {
             conn.Open();
@@ -136,7 +126,7 @@ namespace debugGUI
 
         private void DeleteTask(object sender, EventArgs e)
         {
-
+            // function to delete a task , with messagebox to confirm click is not false positive
             string id = Convert.ToString(Task_Id.Text);
             string title = TitelActual.Text;
             DialogResult d;
@@ -166,13 +156,14 @@ namespace debugGUI
         {
             try
             {
+                //when clicking on new task get all the values from the textboxes using the .Text attribute
                 conn.Open();
                 string naam = NewTaskTitelActual.Text;
                 string werknemer = NewTaskEmployeeActual.Text;
                 string project = NewTaskProjectActual.Text;
                 string doorLoopTijd = NewTaskDLTActual.Text;
                 string beschrijving = NewTaskDescriptionActual.Text;
-
+                // insert these new value in DB , ID is auto increment do not need to add this
                 var insertCommand = new SqlCommand($"INSERT INTO tasks (title,beschrijving, werknemer_id,project_id,looptijd) VALUES (  '{naam}','{beschrijving}','{werknemer}','{project}','{doorLoopTijd}')", conn);
                 insertCommand.ExecuteNonQuery();
                 MessageBox.Show($"New Task {naam} created Successfully");
@@ -188,11 +179,10 @@ namespace debugGUI
         private void UpdateTaskButtonClick(object sender, EventArgs e)
         {
             SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-
             try
             {
                 conn2.Open();
-
+                //get all the values from the textboxes using the .Text attribute that was filled in the edit panel of the form
                 int id = Convert.ToInt32(Task_Id.Text);
                 string title = TitelActual.Text;
                 string beschrijving = BeschrijvingActual.Text;
@@ -212,6 +202,7 @@ namespace debugGUI
                 command.Parameters.AddWithValue("@gebruikte_uren", gebruikte_uren);
                 command.Parameters.AddWithValue("@werknemer", werknemer);
                 command.ExecuteNonQuery();
+                //message box to confirm success , seems a nice visual hint that operation is done
                 MessageBox.Show($"Task {title} Updated Successfully");
                 conn.Close();
 
@@ -227,7 +218,8 @@ namespace debugGUI
         private void FinishTaskButtonClick(object sender, EventArgs e)
         {
          SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-
+            // finish task on button click,
+            // also get all value in case user has updated his hours without clicking UPDATE first
             try
             {
                 conn2.Open();

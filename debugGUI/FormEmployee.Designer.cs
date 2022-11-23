@@ -304,6 +304,7 @@
             this.Employee_ID.Name = "Employee_ID";
             this.Employee_ID.Size = new System.Drawing.Size(0, 15);
             this.Employee_ID.TabIndex = 47;
+            this.Employee_ID.Visible = false;
             // 
             // editEmployee
             // 

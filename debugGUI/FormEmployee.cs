@@ -81,6 +81,7 @@ namespace debugGUI
 
         private void FillRaycoEmployeeDatatable()
         {
+            // get data from DB users to fill the Rayco datatable 
             conn.Open();
             String querry = "SELECT id, name, admin FROM users";
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
@@ -112,14 +113,12 @@ namespace debugGUI
             if (e.RowIndex != -1)
             {
                 int id = Convert.ToInt32(EmployeeRaycoTable.Rows[e.RowIndex].Cells[0].Value);
-                //string name = Convert.ToString(EmployeeHRDataTable.Rows[e.RowIndex].Cells[1].Value);
                 Console.WriteLine($"Id and Name from Rayco users table: {id}");
                 FillEditPanel(id);
             }
         }
         private void FillEditPanel(int id)
         {
-            //problem with keeping open the connection (and re-opening) 
             SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             conn2.Open();
             Employee_ID.Text = "";
@@ -131,9 +130,6 @@ namespace debugGUI
                 using (conn2)
                 {
                     // to get project name using task ID
-                    //SqlCommand command_project = new SqlCommand("SELECT * FROM tasks WHERE id = '" + id + "'", conn2);
-                    //SqlDataReader reader_project = command_project.ExecuteReader();
-
                     // getting the data form the selected task in the top datagridview
                     SqlCommand command = new SqlCommand("SELECT * FROM users WHERE id = '" + id + "'", conn2);
                     SqlDataReader reader = command.ExecuteReader();
