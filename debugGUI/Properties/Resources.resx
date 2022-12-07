@@ -118,33 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="diagram-project-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diagram-project-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gauge-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gauge-solid.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="people-group-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\people-group-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gauge-solid1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gauge-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="users-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\users-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="gear-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\gear-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="list-check-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\list-check-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="house-solid" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\house-solid1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="6316" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\6316.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
