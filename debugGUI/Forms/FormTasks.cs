@@ -17,8 +17,8 @@ namespace debugGUI
     {
         SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
         SqlDataReader myreader;
-        readonly int admin = Form1.adminResult;
-        readonly int userId = Form1.userId;
+        readonly int admin = Home.adminResult;
+        readonly int userId = Home.userId;
         public FormTasks()
         {
             InitializeComponent();

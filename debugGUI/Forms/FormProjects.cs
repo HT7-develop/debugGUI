@@ -1,4 +1,5 @@
-﻿using FontAwesome.Sharp;
+﻿using debugGUI.Classes;
+using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -30,6 +31,11 @@ namespace debugGUI
         private void FillProjectsDatatable()
         {
             // fill the projects datatable , no role checking on this page as a "project member" cannot access this page 
+            dbConnection db = new dbConnection();
+            db.Test();
+
+
+
             String querry = "SELECT * FROM projects";
 
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);

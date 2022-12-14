@@ -60,6 +60,8 @@
             this.NewProjectDescriptionActual = new System.Windows.Forms.RichTextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ProjectSoortBox = new System.Windows.Forms.ListBox();
             this.LeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).BeginInit();
             this.TopLabel.SuspendLayout();
@@ -270,6 +272,8 @@
             // 
             this.GebruikteUren_actual.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.GebruikteUren_actual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(48)))), ((int)(((byte)(70)))));
+            this.GebruikteUren_actual.Controls.Add(this.ProjectSoortBox);
+            this.GebruikteUren_actual.Controls.Add(this.label4);
             this.GebruikteUren_actual.Controls.Add(this.TotalGebruikteUren);
             this.GebruikteUren_actual.Controls.Add(this.label3);
             this.GebruikteUren_actual.Controls.Add(this.Doorlooptijd_actual);
@@ -452,7 +456,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(13, 149);
+            this.label12.Location = new System.Drawing.Point(12, 232);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(260, 15);
             this.label12.TabIndex = 23;
@@ -464,7 +468,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(13, 129);
+            this.label11.Location = new System.Drawing.Point(12, 212);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 20);
             this.label11.TabIndex = 24;
@@ -476,11 +480,11 @@
             this.NewProjectDescriptionActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewProjectDescriptionActual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NewProjectDescriptionActual.ForeColor = System.Drawing.Color.White;
-            this.NewProjectDescriptionActual.Location = new System.Drawing.Point(13, 169);
+            this.NewProjectDescriptionActual.Location = new System.Drawing.Point(13, 252);
             this.NewProjectDescriptionActual.Margin = new System.Windows.Forms.Padding(5);
             this.NewProjectDescriptionActual.Name = "NewProjectDescriptionActual";
             this.NewProjectDescriptionActual.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
-            this.NewProjectDescriptionActual.Size = new System.Drawing.Size(376, 136);
+            this.NewProjectDescriptionActual.Size = new System.Drawing.Size(376, 53);
             this.NewProjectDescriptionActual.TabIndex = 22;
             this.NewProjectDescriptionActual.Text = "";
             // 
@@ -517,6 +521,30 @@
             this.label10.TabIndex = 25;
             this.label10.Text = "Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(12, 129);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Project Soort";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // ProjectSoortBox
+            // 
+            this.ProjectSoortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.ProjectSoortBox.ForeColor = System.Drawing.Color.White;
+            this.ProjectSoortBox.FormattingEnabled = true;
+            this.ProjectSoortBox.ItemHeight = 15;
+            this.ProjectSoortBox.Location = new System.Drawing.Point(12, 161);
+            this.ProjectSoortBox.Name = "ProjectSoortBox";
+            this.ProjectSoortBox.Size = new System.Drawing.Size(376, 34);
+            this.ProjectSoortBox.TabIndex = 51;
             // 
             // FormProjects
             // 
@@ -572,5 +600,7 @@
         private Label label2;
         private TextBox TotalGebruikteUren;
         private Label label3;
+        private ListBox ProjectSoortBox;
+        private Label label4;
     }
 }
