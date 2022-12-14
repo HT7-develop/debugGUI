@@ -501,19 +501,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\incub\\.nuget\\packages\\": {}
+    "C:\\Users\\mariy\\.nuget\\packages\\": {},
+    "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\incub\\source\\repos\\debugGUI\\debugGUI\\debugGUI.csproj",
+      "projectUniqueName": "C:\\Users\\mariy\\Downloads\\RaycoV1 (2)\\debugGUI\\debugGUI\\debugGUI.csproj",
       "projectName": "debugGUI",
-      "projectPath": "C:\\Users\\incub\\source\\repos\\debugGUI\\debugGUI\\debugGUI.csproj",
-      "packagesPath": "C:\\Users\\incub\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\incub\\source\\repos\\debugGUI\\debugGUI\\obj\\",
+      "projectPath": "C:\\Users\\mariy\\Downloads\\RaycoV1 (2)\\debugGUI\\debugGUI\\debugGUI.csproj",
+      "packagesPath": "C:\\Users\\mariy\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\mariy\\Downloads\\RaycoV1 (2)\\debugGUI\\debugGUI\\obj\\",
       "projectStyle": "PackageReference",
+      "fallbackFolders": [
+        "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+      ],
       "configFilePaths": [
-        "C:\\Users\\incub\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\mariy\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -521,6 +526,7 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -567,7 +573,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
       }
     }
   }

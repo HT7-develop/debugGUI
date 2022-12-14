@@ -8,10 +8,13 @@ namespace debugGUI.classes
 {
     internal class Werknemer
     {
+        public int id;
+        public string naam;
+
         public int Id { get; }
         public string Naam { get; set; }
 
-        public Werknemer(int id, string naam)
+        public Werknemer(int id, string naam) //constructor
         {
             Id = id;
             Naam = naam;
