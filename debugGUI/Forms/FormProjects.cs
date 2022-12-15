@@ -10,7 +10,9 @@ using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Forms;
+using System.Xml.Linq;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace debugGUI
@@ -19,8 +21,11 @@ namespace debugGUI
     {
         SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
         SqlDataReader myreader;
+
         public int TotalLooptijd;
         public  int TotalGebruikte_uren;
+
+
         public FormProjects()
         {
             InitializeComponent();
@@ -31,10 +36,8 @@ namespace debugGUI
         private void FillProjectsDatatable()
         {
             // fill the projects datatable , no role checking on this page as a "project member" cannot access this page 
-            dbConnection db = new dbConnection();
-            db.Test();
-
-
+            //dbConnection db = new dbConnection();
+            //db.Test();
 
             String querry = "SELECT * FROM projects";
 
@@ -45,7 +48,50 @@ namespace debugGUI
             ProjectsDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ProjectsDatatable.Columns[2].FillWeight = 400;
             conn.Close();
+
+            conn.Open();
+            SqlCommand command = new SqlCommand("SELECT name FROM ProjectSoort", conn);
+            SqlDataReader reader = command.ExecuteReader();
+            var ProjectSoort = new List<string>();
+           
+
+            while (reader.Read())
+            {
+                string name = reader["name"].ToString();
+                ProjectSoort.Add(name);
+            }
+            ProjectSoortBox.DataSource = ProjectSoort;
+            conn.Close();   
         }
+
+        private void FillPTasksDatatable(int id)
+        {
+            // fill the project tasks datatable
+            String querry = "SELECT * FROM tasks where project_id = '" + id + "'";
+
+            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+            DataTable dt = new DataTable();
+            sda.Fill(dt);
+            ProjectTasksDatatable.DataSource = dt;
+            ProjectTasksDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            ProjectTasksDatatable.Columns[2].FillWeight = 400;
+            conn.Close();
+
+            //conn.Open();
+            //SqlCommand command = new SqlCommand("SELECT name FROM ProjectSoort", conn);
+            //SqlDataReader reader = command.ExecuteReader();
+            //var ProjectSoort = new List<string>();
+
+
+            //while (reader.Read())
+            //{
+            //    string name = reader["name"].ToString();
+            //    ProjectSoort.Add(name);
+            //}
+            //ProjectSoortBox.DataSource = ProjectSoort;
+            //conn.Close();
+        }
+
 
         private void NewProject(object sender, EventArgs e)
         {
@@ -56,9 +102,9 @@ namespace debugGUI
                 conn.Open();
                 string naam = NewProjectNameActual.Text;
                 string beschrijving = NewProjectDescriptionActual.Text;
-
+                string projectsoort = ProjectSoortBox.Text;
                 var insertCommand = new SqlCommand(
-                   $"INSERT INTO projects (beschrijving, naam) VALUES ( '{beschrijving}','{naam}')", conn);
+                   $"INSERT INTO projects (beschrijving, naam, projectsoort) VALUES ( '{beschrijving}','{naam}', '{projectsoort}')", conn);
                 insertCommand.ExecuteNonQuery();
                 MessageBox.Show($"New Project {naam} created Successfully");
                 conn.Close();
@@ -143,6 +189,7 @@ namespace debugGUI
                 {
                     int id = Convert.ToInt32(ProjectsDatatable.Rows[e.RowIndex].Cells[0].Value);
                     FillEditPanel(id);
+                    FillPTasksDatatable(id);
                 }
             }
             catch (Exception error)
@@ -150,7 +197,8 @@ namespace debugGUI
 
                 MessageBox.Show(error.Message );
             }
-         
+
+
         }
 
         private void UpdateButtonClick(object sender, EventArgs e)
@@ -217,8 +265,7 @@ namespace debugGUI
 
         private void LeadTimeCalc(int id)
         {
-            TotalLooptijd = 0;
-            TotalGebruikte_uren = 0;
+            
             SqlConnection conn3 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
             conn3.Open();
@@ -235,7 +282,14 @@ namespace debugGUI
                 {
                     while (reader2.Read())
                     {
-                        TotalLooptijd = Convert.ToInt32(reader2[0]);
+                        if (reader2[0] != DBNull.Value)
+                        {
+                            TotalLooptijd = Convert.ToInt32(reader2[0]);
+                        }
+                        else
+                        {
+                            Doorlooptijd_actual.Text = "0";
+                        }
                     }
                 }
                 else
@@ -252,7 +306,14 @@ namespace debugGUI
                 {
                     while (reader3.Read())
                     {
-                        TotalGebruikte_uren += Convert.ToInt32(reader3[0]);
+                        if (reader3[0] != DBNull.Value)
+                        {
+                            TotalGebruikte_uren += Convert.ToInt32(reader3[0]);
+                        }
+                        else
+                        {
+                            TotalGebruikteUren.Text = "0";
+                        }
                     }
                 }
                 else
@@ -260,7 +321,6 @@ namespace debugGUI
                     Console.WriteLine("No rows found.");
                 }
                 reader3.Close();
-
 
                 Doorlooptijd_actual.Text = Convert.ToString(TotalLooptijd);
                 TotalGebruikteUren.Text = Convert.ToString(TotalGebruikte_uren);

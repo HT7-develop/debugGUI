@@ -16,7 +16,8 @@ namespace debugGUI
         public static int adminResult;
         public static int userId;
 
-        dbConnection db = new dbConnection();
+        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+
 
         public Home()
         {
@@ -27,15 +28,15 @@ namespace debugGUI
 
         public void UserInfo()
         {
-            
-            db.connOpen();
+            //dbConnection db = new dbConnection();
+            //db.connOpen();
             string UserName = LoginScreen.username; 
             UsernameLabel.Text = UserName;
-
+            conn.Open();
             // check user role with name entered in login
-            //SqlCommand command = new SqlCommand($"SELECT admin,id FROM users WHERE name = '{UserName}'", db);
-            dbConnection.sqlComm($"SELECT admin,id FROM users WHERE name = '{UserName}'", db);
-            SqlDataReader reader = sqlComm.ExecuteReader();
+            SqlCommand command = new SqlCommand($"SELECT admin,id FROM users WHERE name = '{UserName}'", conn);
+            //db.sqlComm($"SELECT admin,id FROM users WHERE name = '" + UserName + "'");
+            SqlDataReader reader = command.ExecuteReader();
             adminResult = 0;
            
             if (reader.HasRows)

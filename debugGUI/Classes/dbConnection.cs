@@ -12,9 +12,9 @@ namespace debugGUI.Classes
     internal class dbConnection
     {
         // change connection string here to get access to the DB on your local machine
-        public string ConnectionString = @"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True";
+        private string ConnectionString = @"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True";
 
-        public SqlConnection conn;
+        public SqlConnection conn = new SqlConnection();
         public string querry;
         public string commandString;
 
@@ -22,7 +22,7 @@ namespace debugGUI.Classes
 
         public dbConnection()
         {
-           conn = new(ConnectionString);
+           conn = new SqlConnection(ConnectionString);
         }
 
         // open sql connection
@@ -34,7 +34,6 @@ namespace debugGUI.Classes
         // close opened sql connection
         public void connClose()
         {
-           
             conn.Close();
         }
 
@@ -47,11 +46,12 @@ namespace debugGUI.Classes
         }
 
         // sql statement method
-        public void sqlComm(string cstr)
+        public SqlCommand sqlComm(string cstr)
         {
             SqlConnection sqlConnection = new SqlConnection(cstr);
             commandString = cstr;
             SqlCommand command = new SqlCommand(commandString, sqlConnection);
+            return command;
         }
 
         // test function

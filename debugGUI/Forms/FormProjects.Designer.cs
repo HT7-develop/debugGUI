@@ -28,10 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.LeftSide = new System.Windows.Forms.Panel();
             this.ProjectsDatatable = new System.Windows.Forms.DataGridView();
             this.TopLabel = new System.Windows.Forms.Panel();
@@ -43,6 +47,8 @@
             this.iconButton3 = new FontAwesome.Sharp.IconButton();
             this.iconButton2 = new FontAwesome.Sharp.IconButton();
             this.GebruikteUren_actual = new System.Windows.Forms.Panel();
+            this.ProjectSoortBox = new System.Windows.Forms.ListBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.TotalGebruikteUren = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.Doorlooptijd_actual = new System.Windows.Forms.TextBox();
@@ -60,8 +66,11 @@
             this.NewProjectDescriptionActual = new System.Windows.Forms.RichTextBox();
             this.iconButton1 = new FontAwesome.Sharp.IconButton();
             this.label10 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ProjectSoortBox = new System.Windows.Forms.ListBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.ProjectTasksDatatable = new System.Windows.Forms.DataGridView();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.iconPictureBox3 = new FontAwesome.Sharp.IconPictureBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.LeftSide.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ProjectsDatatable)).BeginInit();
             this.TopLabel.SuspendLayout();
@@ -69,6 +78,10 @@
             this.GebruikteUren_actual.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectTasksDatatable)).BeginInit();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).BeginInit();
             this.SuspendLayout();
             // 
             // LeftSide
@@ -76,10 +89,9 @@
             this.LeftSide.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
             this.LeftSide.Controls.Add(this.ProjectsDatatable);
             this.LeftSide.Controls.Add(this.TopLabel);
-            this.LeftSide.Dock = System.Windows.Forms.DockStyle.Left;
             this.LeftSide.Location = new System.Drawing.Point(0, 0);
             this.LeftSide.Name = "LeftSide";
-            this.LeftSide.Size = new System.Drawing.Size(728, 663);
+            this.LeftSide.Size = new System.Drawing.Size(728, 360);
             this.LeftSide.TabIndex = 0;
             // 
             // ProjectsDatatable
@@ -92,25 +104,25 @@
             this.ProjectsDatatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.ProjectsDatatable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.ProjectsDatatable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.ProjectsDatatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.DefaultCellStyle = dataGridViewCellStyle10;
             this.ProjectsDatatable.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ProjectsDatatable.EnableHeadersVisualStyles = false;
             this.ProjectsDatatable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
@@ -120,25 +132,25 @@
             this.ProjectsDatatable.Name = "ProjectsDatatable";
             this.ProjectsDatatable.ReadOnly = true;
             this.ProjectsDatatable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle7.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.ProjectsDatatable.RowHeadersVisible = false;
             this.ProjectsDatatable.RowHeadersWidth = 51;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.Padding = new System.Windows.Forms.Padding(10);
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.ProjectsDatatable.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectsDatatable.RowsDefaultCellStyle = dataGridViewCellStyle12;
             this.ProjectsDatatable.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
             this.ProjectsDatatable.RowTemplate.Height = 50;
             this.ProjectsDatatable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -147,7 +159,7 @@
             this.ProjectsDatatable.ShowCellToolTips = false;
             this.ProjectsDatatable.ShowEditingIcon = false;
             this.ProjectsDatatable.ShowRowErrors = false;
-            this.ProjectsDatatable.Size = new System.Drawing.Size(728, 609);
+            this.ProjectsDatatable.Size = new System.Drawing.Size(728, 306);
             this.ProjectsDatatable.TabIndex = 0;
             this.ProjectsDatatable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.SelectProject);
             // 
@@ -194,7 +206,7 @@
             // 
             this.DescriptionActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.DescriptionActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.DescriptionActual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.DescriptionActual.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.DescriptionActual.ForeColor = System.Drawing.Color.White;
             this.DescriptionActual.Location = new System.Drawing.Point(13, 506);
             this.DescriptionActual.Margin = new System.Windows.Forms.Padding(5);
@@ -299,16 +311,43 @@
             this.GebruikteUren_actual.Size = new System.Drawing.Size(405, 663);
             this.GebruikteUren_actual.TabIndex = 1;
             // 
+            // ProjectSoortBox
+            // 
+            this.ProjectSoortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.ProjectSoortBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectSoortBox.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.ProjectSoortBox.ForeColor = System.Drawing.Color.White;
+            this.ProjectSoortBox.FormattingEnabled = true;
+            this.ProjectSoortBox.ItemHeight = 22;
+            this.ProjectSoortBox.Location = new System.Drawing.Point(15, 145);
+            this.ProjectSoortBox.Name = "ProjectSoortBox";
+            this.ProjectSoortBox.Size = new System.Drawing.Size(375, 66);
+            this.ProjectSoortBox.TabIndex = 52;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(13, 121);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(91, 20);
+            this.label4.TabIndex = 49;
+            this.label4.Text = "Project Soort";
+            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
             // TotalGebruikteUren
             // 
             this.TotalGebruikteUren.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.TotalGebruikteUren.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.TotalGebruikteUren.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.TotalGebruikteUren.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.TotalGebruikteUren.ForeColor = System.Drawing.Color.White;
             this.TotalGebruikteUren.Location = new System.Drawing.Point(192, 462);
             this.TotalGebruikteUren.Name = "TotalGebruikteUren";
             this.TotalGebruikteUren.ReadOnly = true;
-            this.TotalGebruikteUren.Size = new System.Drawing.Size(139, 16);
+            this.TotalGebruikteUren.Size = new System.Drawing.Size(139, 22);
             this.TotalGebruikteUren.TabIndex = 48;
             this.TotalGebruikteUren.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -329,11 +368,12 @@
             this.Doorlooptijd_actual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.Doorlooptijd_actual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Doorlooptijd_actual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.Doorlooptijd_actual.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.Doorlooptijd_actual.ForeColor = System.Drawing.Color.White;
             this.Doorlooptijd_actual.Location = new System.Drawing.Point(14, 462);
             this.Doorlooptijd_actual.Name = "Doorlooptijd_actual";
             this.Doorlooptijd_actual.ReadOnly = true;
-            this.Doorlooptijd_actual.Size = new System.Drawing.Size(137, 16);
+            this.Doorlooptijd_actual.Size = new System.Drawing.Size(137, 22);
             this.Doorlooptijd_actual.TabIndex = 46;
             this.Doorlooptijd_actual.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -394,10 +434,11 @@
             this.NameActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.NameActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NameActual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NameActual.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NameActual.ForeColor = System.Drawing.Color.White;
             this.NameActual.Location = new System.Drawing.Point(12, 415);
             this.NameActual.Name = "NameActual";
-            this.NameActual.Size = new System.Drawing.Size(376, 16);
+            this.NameActual.Size = new System.Drawing.Size(376, 22);
             this.NameActual.TabIndex = 36;
             // 
             // panel1
@@ -445,10 +486,11 @@
             this.NewProjectNameActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.NewProjectNameActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.NewProjectNameActual.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.NewProjectNameActual.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NewProjectNameActual.ForeColor = System.Drawing.Color.White;
-            this.NewProjectNameActual.Location = new System.Drawing.Point(13, 101);
+            this.NewProjectNameActual.Location = new System.Drawing.Point(14, 90);
             this.NewProjectNameActual.Name = "NewProjectNameActual";
-            this.NewProjectNameActual.Size = new System.Drawing.Size(376, 16);
+            this.NewProjectNameActual.Size = new System.Drawing.Size(376, 22);
             this.NewProjectNameActual.TabIndex = 28;
             // 
             // label12
@@ -456,7 +498,7 @@
             this.label12.AutoSize = true;
             this.label12.BackColor = System.Drawing.Color.Transparent;
             this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(12, 232);
+            this.label12.Location = new System.Drawing.Point(12, 238);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(260, 15);
             this.label12.TabIndex = 23;
@@ -468,7 +510,7 @@
             this.label11.BackColor = System.Drawing.Color.Transparent;
             this.label11.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(12, 212);
+            this.label11.Location = new System.Drawing.Point(12, 218);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(80, 20);
             this.label11.TabIndex = 24;
@@ -478,9 +520,9 @@
             // 
             this.NewProjectDescriptionActual.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
             this.NewProjectDescriptionActual.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.NewProjectDescriptionActual.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.NewProjectDescriptionActual.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.NewProjectDescriptionActual.ForeColor = System.Drawing.Color.White;
-            this.NewProjectDescriptionActual.Location = new System.Drawing.Point(13, 252);
+            this.NewProjectDescriptionActual.Location = new System.Drawing.Point(12, 258);
             this.NewProjectDescriptionActual.Margin = new System.Windows.Forms.Padding(5);
             this.NewProjectDescriptionActual.Name = "NewProjectDescriptionActual";
             this.NewProjectDescriptionActual.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.Vertical;
@@ -499,7 +541,7 @@
             this.iconButton1.IconColor = System.Drawing.Color.White;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.IconSize = 20;
-            this.iconButton1.Location = new System.Drawing.Point(89, 313);
+            this.iconButton1.Location = new System.Drawing.Point(83, 317);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(232, 30);
             this.iconButton1.TabIndex = 21;
@@ -515,42 +557,136 @@
             this.label10.BackColor = System.Drawing.Color.Transparent;
             this.label10.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(13, 69);
+            this.label10.Location = new System.Drawing.Point(12, 67);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(44, 20);
             this.label10.TabIndex = 25;
             this.label10.Text = "Name";
             this.label10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label4
+            // panel2
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Arial Narrow", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(12, 129);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(91, 20);
-            this.label4.TabIndex = 49;
-            this.label4.Text = "Project Soort";
-            this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
+            this.panel2.Controls.Add(this.ProjectTasksDatatable);
+            this.panel2.Controls.Add(this.panel4);
+            this.panel2.Location = new System.Drawing.Point(1, 375);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(728, 288);
+            this.panel2.TabIndex = 2;
             // 
-            // ProjectSoortBox
+            // ProjectTasksDatatable
             // 
-            this.ProjectSoortBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
-            this.ProjectSoortBox.ForeColor = System.Drawing.Color.White;
-            this.ProjectSoortBox.FormattingEnabled = true;
-            this.ProjectSoortBox.ItemHeight = 15;
-            this.ProjectSoortBox.Location = new System.Drawing.Point(12, 161);
-            this.ProjectSoortBox.Name = "ProjectSoortBox";
-            this.ProjectSoortBox.Size = new System.Drawing.Size(376, 34);
-            this.ProjectSoortBox.TabIndex = 51;
+            this.ProjectTasksDatatable.AllowUserToAddRows = false;
+            this.ProjectTasksDatatable.AllowUserToDeleteRows = false;
+            this.ProjectTasksDatatable.AllowUserToResizeColumns = false;
+            this.ProjectTasksDatatable.AllowUserToResizeRows = false;
+            this.ProjectTasksDatatable.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            this.ProjectTasksDatatable.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.ProjectTasksDatatable.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.ProjectTasksDatatable.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectTasksDatatable.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
+            this.ProjectTasksDatatable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectTasksDatatable.DefaultCellStyle = dataGridViewCellStyle14;
+            this.ProjectTasksDatatable.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ProjectTasksDatatable.EnableHeadersVisualStyles = false;
+            this.ProjectTasksDatatable.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.ProjectTasksDatatable.Location = new System.Drawing.Point(0, 54);
+            this.ProjectTasksDatatable.Margin = new System.Windows.Forms.Padding(0);
+            this.ProjectTasksDatatable.MultiSelect = false;
+            this.ProjectTasksDatatable.Name = "ProjectTasksDatatable";
+            this.ProjectTasksDatatable.ReadOnly = true;
+            this.ProjectTasksDatatable.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectTasksDatatable.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.ProjectTasksDatatable.RowHeadersVisible = false;
+            this.ProjectTasksDatatable.RowHeadersWidth = 51;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(58)))), ((int)(((byte)(70)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.Padding = new System.Windows.Forms.Padding(10);
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.ProjectTasksDatatable.RowsDefaultCellStyle = dataGridViewCellStyle16;
+            this.ProjectTasksDatatable.RowTemplate.DefaultCellStyle.Padding = new System.Windows.Forms.Padding(10);
+            this.ProjectTasksDatatable.RowTemplate.Height = 50;
+            this.ProjectTasksDatatable.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.ProjectTasksDatatable.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.ProjectTasksDatatable.ShowCellErrors = false;
+            this.ProjectTasksDatatable.ShowCellToolTips = false;
+            this.ProjectTasksDatatable.ShowEditingIcon = false;
+            this.ProjectTasksDatatable.ShowRowErrors = false;
+            this.ProjectTasksDatatable.Size = new System.Drawing.Size(728, 234);
+            this.ProjectTasksDatatable.TabIndex = 0;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.panel4.Controls.Add(this.iconPictureBox3);
+            this.panel4.Controls.Add(this.label5);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(728, 54);
+            this.panel4.TabIndex = 36;
+            // 
+            // iconPictureBox3
+            // 
+            this.iconPictureBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(103)))), ((int)(((byte)(240)))));
+            this.iconPictureBox3.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox3.IconChar = FontAwesome.Sharp.IconChar.BarChart;
+            this.iconPictureBox3.IconColor = System.Drawing.SystemColors.ButtonFace;
+            this.iconPictureBox3.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconPictureBox3.Location = new System.Drawing.Point(12, 12);
+            this.iconPictureBox3.Name = "iconPictureBox3";
+            this.iconPictureBox3.Size = new System.Drawing.Size(32, 32);
+            this.iconPictureBox3.TabIndex = 1;
+            this.iconPictureBox3.TabStop = false;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label5.Font = new System.Drawing.Font("Arial Narrow", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(217)))), ((int)(((byte)(217)))), ((int)(((byte)(217)))));
+            this.label5.ImageAlign = System.Drawing.ContentAlignment.BottomLeft;
+            this.label5.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.label5.Location = new System.Drawing.Point(51, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(157, 31);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Project Tasks";
+            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormProjects
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(29)))), ((int)(((byte)(49)))));
             this.ClientSize = new System.Drawing.Size(1153, 663);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.GebruikteUren_actual);
             this.Controls.Add(this.LeftSide);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -566,6 +702,11 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.ProjectTasksDatatable)).EndInit();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox3)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -600,7 +741,12 @@
         private Label label2;
         private TextBox TotalGebruikteUren;
         private Label label3;
-        private ListBox ProjectSoortBox;
         private Label label4;
+        private ListBox ProjectSoortBox;
+        private Panel panel2;
+        private DataGridView ProjectTasksDatatable;
+        private Panel panel4;
+        private FontAwesome.Sharp.IconPictureBox iconPictureBox3;
+        private Label label5;
     }
 }
