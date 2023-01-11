@@ -15,7 +15,9 @@ namespace debugGUI
     public partial class FormDashboard : Form
     {
         private HrKoppeling hrKoppeling = new HrKoppeling("http://localhost:8008");
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+        static dbConnection newtest = new dbConnection();
+        SqlConnection conn = new SqlConnection(newtest.ConnectionString);
+
 
         public FormDashboard()
         {
@@ -23,6 +25,7 @@ namespace debugGUI
             Filltasks();
             FillProjects();
             FillRaycoEmployeeDatatable();
+            Console.WriteLine(conn);
         }
         // function to fill tasks datatable with no filters for role
         private void Filltasks()

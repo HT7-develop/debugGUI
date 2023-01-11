@@ -1,4 +1,4 @@
-﻿using debugGUI.Classes;
+﻿using debugGUI.classes;
 using FontAwesome.Sharp;
 using System;
 using System.Collections.Generic;
@@ -22,6 +22,9 @@ namespace debugGUI
         SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
         SqlDataReader myreader;
 
+        private List<AvailabilityModel> projectleden = new List<AvailabilityModel>();
+        private List<ProjectSoort> projectsoort = new List<ProjectSoort>();
+       
         public int TotalLooptijd;
         public  int TotalGebruikte_uren;
 
@@ -29,16 +32,17 @@ namespace debugGUI
         public FormProjects()
         {
             InitializeComponent();
+            //this.projectleden = projectleden;
+            //this.projectsoort = projectsoort;
             // pre-fill datatable at init 
             FillProjectsDatatable();
+
+           
         }
 
         private void FillProjectsDatatable()
         {
             // fill the projects datatable , no role checking on this page as a "project member" cannot access this page 
-            //dbConnection db = new dbConnection();
-            //db.Test();
-
             String querry = "SELECT * FROM projects";
 
             SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
@@ -49,23 +53,38 @@ namespace debugGUI
             ProjectsDatatable.Columns[2].FillWeight = 400;
             conn.Close();
 
+            //populate projectsoort box in new project tab
             conn.Open();
             SqlCommand command = new SqlCommand("SELECT name FROM ProjectSoort", conn);
             SqlDataReader reader = command.ExecuteReader();
             var ProjectSoort = new List<string>();
            
-
             while (reader.Read())
             {
                 string name = reader["name"].ToString();
                 ProjectSoort.Add(name);
             }
             ProjectSoortBox.DataSource = ProjectSoort;
-            conn.Close();   
+            conn.Close();
+
+            // populate users box in the new project tab
+            conn.Open();
+            SqlCommand command2 = new SqlCommand("SELECT * FROM users", conn);
+            SqlDataReader reader2 = command2.ExecuteReader();
+            var RaycoUsers = new List<string>();
+
+            while (reader2.Read())
+            {
+                string name2 = reader2["name"].ToString();
+                RaycoUsers.Add(name2);
+            }
+            HRusersBox.DataSource = RaycoUsers;
+            conn.Close();
         }
 
         private void FillPTasksDatatable(int id)
         {
+            conn.Open();
             // fill the project tasks datatable
             String querry = "SELECT * FROM tasks where project_id = '" + id + "'";
 
@@ -76,6 +95,8 @@ namespace debugGUI
             ProjectTasksDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ProjectTasksDatatable.Columns[2].FillWeight = 400;
             conn.Close();
+
+
 
             //conn.Open();
             //SqlCommand command = new SqlCommand("SELECT name FROM ProjectSoort", conn);
@@ -95,23 +116,56 @@ namespace debugGUI
 
         private void NewProject(object sender, EventArgs e)
         {
-            // String querry = "";
-            // SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+            
             try
             {
                 conn.Open();
                 string naam = NewProjectNameActual.Text;
                 string beschrijving = NewProjectDescriptionActual.Text;
                 string projectsoort = ProjectSoortBox.Text;
-                var insertCommand = new SqlCommand(
-                   $"INSERT INTO projects (beschrijving, naam, projectsoort) VALUES ( '{beschrijving}','{naam}', '{projectsoort}')", conn);
+                string assignedUser = HRusersBox.Text;
+
+                // get deeltaken == projectid from Db
+                using (conn)
+                {
+                    // sql command to get the project with the ID passed from SelectProject(function)
+                    SqlCommand querryDeeltaak = new SqlCommand("SELECT * FROM deeltaak where projectsoort = '" + projectsoort + "'", conn);
+                    SqlDataReader reader = querryDeeltaak.ExecuteReader();
+                    if (reader.HasRows)
+                    {
+                        while (reader.Read())
+                        {
+                            string titel = (string)reader[1];
+                            string description = (string)reader[2];
+                            string status = (string)reader[3];
+                            int looptijd = (int)reader[4];
+                            DeelTaak opvolger_id = (DeelTaak)reader[5];
+                            string role = (string)reader[7];
+                            //new DeelTaak(titel, description, role, opvolger_id, looptijd, status);
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("No rows found.");
+                    }
+                    reader.Close();
+                    //conn.Close();
+                }
+
+                //loop through results and make new Taak() with results from reader
+                // add Deeltaken to Project in the DB 
+
+                SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+                conn2.Open();
+                var insertCommand = new SqlCommand($"INSERT INTO projects (naam, beschrijving, projectsoort, user) VALUES ('{naam}','{beschrijving}','{projectsoort}','{assignedUser}')", conn2);
                 insertCommand.ExecuteNonQuery();
-                MessageBox.Show($"New Project {naam} created Successfully");
-                conn.Close();
+                MessageBox.Show($"New Project {naam} created Successfully with ProjectSoort: {projectsoort}");
+                conn2.Close();
                 FillProjectsDatatable();
             }
             catch (Exception error)
             {
+                conn.Close();
                 MessageBox.Show(error.Message);
             }
         }
@@ -130,7 +184,7 @@ namespace debugGUI
                 {
                     SqlCommand command = new SqlCommand("DELETE FROM projects WHERE id = '" + id + "'", conn);
                     conn.Open();
-                    myreader = command.ExecuteReader();
+                    SqlDataReader myreader = command.ExecuteReader();
                     MessageBox.Show("successfully deleted Task from database.", "Task deleted");
                     while (myreader.Read())
                     {
@@ -185,7 +239,7 @@ namespace debugGUI
             // 0 means the headers , these do not contain info to display and will normally generate an error.
             try
             {
-                if (e.RowIndex != -1 || e.RowIndex != 0)
+                if (e.RowIndex > 0)
                 {
                     int id = Convert.ToInt32(ProjectsDatatable.Rows[e.RowIndex].Cells[0].Value);
                     FillEditPanel(id);

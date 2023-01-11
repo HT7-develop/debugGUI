@@ -44,7 +44,7 @@ namespace debugGUI.classes
 
         }
 
-        public int[] Beschikbaarheid(int werknemerId, int jaar, int weekNr)
+        public int[] Beschikbaarheid(int werknemerId, int jaar, int weekNr =3)
         {
             client.DefaultRequestHeaders.Clear();
             client.DefaultRequestHeaders.Add("Accept", "application/json");

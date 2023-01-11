@@ -14,7 +14,7 @@ namespace debugGUI.classes
         public int Id { get; }
         public string Naam { get; set; }
 
-        public Werknemer(int id, string naam) //constructor
+        public Werknemer(int id, string naam)
         {
             Id = id;
             Naam = naam;
