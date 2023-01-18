@@ -62,17 +62,18 @@ namespace debugGUI
         private void FillEditPanel(int id)
         {
             //problem with keeping open the connection (and re-opening) 
-            conn.Open();
-            TitelActual.Text = "";
-            BeschrijvingActual.Text = "";
-            StatusActual.Text = "";
-            DoorLoopTijdActual.Text = "";
-            ProjectActual.Text = "";
-            GebruikteUrenActual.Text = "";
-            WerknemerActual.Text = "";
-            Task_Id.Text = "";
+            
             try
             {
+                conn.Open();
+                TitelActual.Text = "";
+                BeschrijvingActual.Text = "";
+                StatusActual.Text = "";
+                DoorLoopTijdActual.Text = "";
+                ProjectActual.Text = "";
+                GebruikteUrenActual.Text = "";
+                WerknemerActual.Text = "";
+                Task_Id.Text = "";
                 using (conn)
                 {
                     // to get project name using task ID
@@ -100,8 +101,9 @@ namespace debugGUI
                         Console.WriteLine("No rows found.");
                     }
                     reader.Close();
+                    conn.Close();
                 }
-                conn.Close();
+               
             }
             catch (Exception e)
             {
@@ -115,11 +117,17 @@ namespace debugGUI
         {
             // checking of rowindex does not equel negative number (these are the headers)
             // this solves error of index for filling in the edit fields
-            if (e.RowIndex != -1)
+            try
             {
-                int id = Convert.ToInt32(TasksDatatable.Rows[e.RowIndex].Cells[0].Value);
-                FillEditPanel(id);
-               
+                if (e.RowIndex > 0)
+                {
+                    int id = Convert.ToInt32(TasksDatatable.Rows[e.RowIndex].Cells[0].Value);
+                    FillEditPanel(id);
+                }
+            }
+            catch (Exception error)
+            {
+                MessageBox.Show(error.Message);
             }
         }
 

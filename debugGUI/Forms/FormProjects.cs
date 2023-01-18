@@ -253,8 +253,7 @@ namespace debugGUI
                 }
             }
             catch (Exception error)
-            {
-
+            { 
                 MessageBox.Show(error.Message );
             }
 

@@ -41,8 +41,6 @@ namespace debugGUI
         private void LoginUser(object sender, EventArgs e)
         {
             // compare input with DB and call Form1 (dashboard) as a class
-           
-
             try
             {
                 username = usernameBox.Text;

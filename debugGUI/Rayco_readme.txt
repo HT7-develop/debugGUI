@@ -55,3 +55,10 @@ Connectie maken met sql server studio
 4. De meegeleverde DB heeft al data voor projecten/taken/gebruikers etc, maar kan ook leeg gebruikt worden mits er een "user" is om in te loggen!
 
 Dit zijn alle benodigde stappen om de software lokaal in gebruik te nemen.
+
+- x - x - x - x - x - x - x - x - x - x - x - x
+Update Rayco Planner 18-01-2023
+
+* Database connection string - is nu op een plek gedefinieerd om het makkelijker te maken om de connectie lokaal te veranderen naar "jouw" SQL server management studio address (oftwel connectionstring)
+* Projectsoort kan gekozen worden bij creatie van een nieuw project, maar er onstaat een "error" bij het opslaan
+* Deeltaken staan in de database, maar een koppeling maken met projectsoort is op dit moment onduidelijk.
