@@ -1,4 +1,5 @@
 ﻿using Microsoft.VisualBasic.Logging;
+using debugGUI.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,9 @@ namespace debugGUI
 {
     public partial class LoginScreen : Form
     {
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
+
         public static string username = "";
         public static string password = "";
         public static int role;
@@ -22,7 +26,6 @@ namespace debugGUI
         {
             InitializeComponent();
         }
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
        
         private void CloseApp(object sender, EventArgs e)
         {
@@ -38,12 +41,13 @@ namespace debugGUI
         private void LoginUser(object sender, EventArgs e)
         {
             // compare input with DB and call Form1 (dashboard) as a class
-            username = usernameBox.Text;
-            password = passwordBox.Text;
+           
 
             try
             {
-                //conn.Open();
+                username = usernameBox.Text;
+                password = passwordBox.Text;
+                conn.Open();
                 String querry = "SELECT * FROM users WHERE name = '"+usernameBox.Text+"' AND password = '"+passwordBox.Text+"'";
                 SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
                 DataTable dt = new DataTable();

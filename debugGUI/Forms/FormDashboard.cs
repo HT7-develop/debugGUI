@@ -15,8 +15,8 @@ namespace debugGUI
     public partial class FormDashboard : Form
     {
         private HrKoppeling hrKoppeling = new HrKoppeling("http://localhost:8008");
-        static dbConnection newtest = new dbConnection();
-        SqlConnection conn = new SqlConnection(newtest.ConnectionString);
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
 
 
         public FormDashboard()

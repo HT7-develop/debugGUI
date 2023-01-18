@@ -1,4 +1,4 @@
-﻿using FontAwesome.Sharp;
+﻿using debugGUI.classes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +15,8 @@ namespace debugGUI
 {
     public partial class FormTasks : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
         SqlDataReader myreader;
         readonly int admin = Home.adminResult;
         readonly int userId = Home.userId;
@@ -61,8 +62,7 @@ namespace debugGUI
         private void FillEditPanel(int id)
         {
             //problem with keeping open the connection (and re-opening) 
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-            conn2.Open();
+            conn.Open();
             TitelActual.Text = "";
             BeschrijvingActual.Text = "";
             StatusActual.Text = "";
@@ -73,14 +73,13 @@ namespace debugGUI
             Task_Id.Text = "";
             try
             {
-                using (conn2)
+                using (conn)
                 {
                     // to get project name using task ID
-                    //SqlCommand command_project = new SqlCommand("SELECT * FROM tasks WHERE id = '" + id + "'", conn2);
                     //SqlDataReader reader_project = command_project.ExecuteReader();
 
                     // getting the data form the selected task in the top datagridview
-                    SqlCommand command = new SqlCommand("SELECT * FROM tasks WHERE id = '" + id + "'", conn2);
+                    SqlCommand command = new SqlCommand("SELECT * FROM tasks WHERE id = '" + id + "'", conn);
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
@@ -102,7 +101,7 @@ namespace debugGUI
                     }
                     reader.Close();
                 }
-                conn2.Close();
+                conn.Close();
             }
             catch (Exception e)
             {
@@ -178,10 +177,9 @@ namespace debugGUI
 
         private void UpdateTaskButtonClick(object sender, EventArgs e)
         {
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             try
             {
-                conn2.Open();
+                conn.Open();
                 //get all the values from the textboxes using the .Text attribute that was filled in the edit panel of the form
                 int id = Convert.ToInt32(Task_Id.Text);
                 string title = TitelActual.Text;
@@ -192,7 +190,7 @@ namespace debugGUI
                 string gebruikte_uren = GebruikteUrenActual.Text;
                 string werknemer = WerknemerActual.Text;
 
-                SqlCommand command = new SqlCommand($"UPDATE tasks SET title=@title, beschrijving = @beschrijving, project_id = @project, looptijd = @doorloop_tijd , werknemer_id = @werknemer , gebruikte_uren = @gebruikte_uren, status = @status WHERE id = {id}", conn2);
+                SqlCommand command = new SqlCommand($"UPDATE tasks SET title=@title, beschrijving = @beschrijving, project_id = @project, looptijd = @doorloop_tijd , werknemer_id = @werknemer , gebruikte_uren = @gebruikte_uren, status = @status WHERE id = {id}", conn);
 
                 command.Parameters.AddWithValue("@title", title);
                 command.Parameters.AddWithValue("@beschrijving", beschrijving);
@@ -217,12 +215,11 @@ namespace debugGUI
 
         private void FinishTaskButtonClick(object sender, EventArgs e)
         {
-         SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             // finish task on button click,
             // also get all value in case user has updated his hours without clicking UPDATE first
             try
             {
-                conn2.Open();
+                conn.Open();
 
                 int id = Convert.ToInt32(Task_Id.Text);
                 string title = TitelActual.Text;
@@ -234,7 +231,7 @@ namespace debugGUI
                 string gebruikte_uren = GebruikteUrenActual.Text;
                 string werknemer = WerknemerActual.Text;
 
-                SqlCommand command = new SqlCommand($"UPDATE tasks SET title=@title, beschrijving = @beschrijving, project_id = @project, looptijd = @doorloop_tijd , werknemer_id = @werknemer , gebruikte_uren = @gebruikte_uren, status = @status WHERE id = {id}", conn2);
+                SqlCommand command = new SqlCommand($"UPDATE tasks SET title=@title, beschrijving = @beschrijving, project_id = @project, looptijd = @doorloop_tijd , werknemer_id = @werknemer , gebruikte_uren = @gebruikte_uren, status = @status WHERE id = {id}", conn);
 
                 command.Parameters.AddWithValue("@title", title);
                 command.Parameters.AddWithValue("@beschrijving", beschrijving);

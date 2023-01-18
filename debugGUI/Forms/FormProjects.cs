@@ -19,8 +19,10 @@ namespace debugGUI
 {
     public partial class FormProjects : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
         SqlDataReader myreader;
+
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
 
         private List<AvailabilityModel> projectleden = new List<AvailabilityModel>();
         private List<ProjectSoort> projectsoort = new List<ProjectSoort>();
@@ -149,19 +151,23 @@ namespace debugGUI
                         Console.WriteLine("No rows found.");
                     }
                     reader.Close();
-                    //conn.Close();
+                    conn.Close();
                 }
 
                 //loop through results and make new Taak() with results from reader
                 // add Deeltaken to Project in the DB 
-
-                SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-                conn2.Open();
-                var insertCommand = new SqlCommand($"INSERT INTO projects (naam, beschrijving, projectsoort, user) VALUES ('{naam}','{beschrijving}','{projectsoort}','{assignedUser}')", conn2);
-                insertCommand.ExecuteNonQuery();
-                MessageBox.Show($"New Project {naam} created Successfully with ProjectSoort: {projectsoort}");
-                conn2.Close();
-                FillProjectsDatatable();
+                try {
+                    conn.Open();
+                    var insertCommand = new SqlCommand($"INSERT INTO projects (naam, beschrijving, projectsoort, user) VALUES ('{naam}','{beschrijving}','{projectsoort}','{assignedUser}')", conn);
+                    insertCommand.ExecuteNonQuery();
+                    MessageBox.Show($"New Project {naam} created Successfully with ProjectSoort: {projectsoort}");
+                    conn.Close();
+                    FillProjectsDatatable();
+                } catch (Exception error)
+                {
+                    conn.Close();
+                    MessageBox.Show(error.Message);
+                }
             }
             catch (Exception error)
             {
@@ -202,16 +208,16 @@ namespace debugGUI
         private void FillEditPanel(int id)
         {
             // this function gets called after SelectProject() and get the the id from that project passed as an parameter.
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-            conn2.Open();
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+            conn.Open();
             // remove previous text from the edit panel just in case.
             NameActual.Text = "";
             DescriptionActual.Text = "";
             // connection with the DB again 
-            using (conn2)
+            using (conn)
             {
                 // sql command to get the project with the ID passed from SelectProject(function)
-                SqlCommand command = new SqlCommand("SELECT * FROM projects WHERE id = '" + id + "'", conn2);
+                SqlCommand command = new SqlCommand("SELECT * FROM projects WHERE id = '" + id + "'", conn);
                 SqlDataReader reader = command.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -228,7 +234,7 @@ namespace debugGUI
                 }
                 reader.Close();
             }
-            conn2.Close();
+            conn.Close();
             // call the calculate leadtime function with project id
             LeadTimeCalc(id);
         }
@@ -258,15 +264,15 @@ namespace debugGUI
         private void UpdateButtonClick(object sender, EventArgs e)
         {
             // when click ing on the update button, get all values from the textboxes and add these values as new in the DB with the correct project id.
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             string name = NameActual.Text;
             try
             {
-                conn2.Open();
+                conn.Open();
                 int id = Convert.ToInt32(Project_Id.Text);
                 string title = NameActual.Text;
                 string beschrijving = DescriptionActual.Text;
-                SqlCommand command = new SqlCommand($"UPDATE projects SET naam=@naam, beschrijving = @beschrijving WHERE id = {id}", conn2);
+                SqlCommand command = new SqlCommand($"UPDATE projects SET naam=@naam, beschrijving = @beschrijving WHERE id = {id}", conn);
                 command.Parameters.AddWithValue("@naam", title);
                 command.Parameters.AddWithValue("@beschrijving", beschrijving);
                 command.ExecuteNonQuery();
@@ -298,9 +304,9 @@ namespace debugGUI
                 try
                 {
                     // update the project with status finished when click on the button
-                    SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-                    conn2.Open();
-                    SqlCommand command = new SqlCommand($"UPDATE projects SET naam=@naam, beschrijving = @beschrijving, status = @status WHERE id = {id}", conn2);
+                    SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+                    conn.Open();
+                    SqlCommand command = new SqlCommand($"UPDATE projects SET naam=@naam, beschrijving = @beschrijving, status = @status WHERE id = {id}", conn);
                     command.Parameters.AddWithValue("@naam", naam);
                     command.Parameters.AddWithValue("@status", status);
                     command.Parameters.AddWithValue("@beschrijving", beschrijving);

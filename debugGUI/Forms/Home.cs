@@ -1,4 +1,5 @@
 using FontAwesome.Sharp;
+using debugGUI.classes;
 using Microsoft.VisualBasic.ApplicationServices;
 using System.Data;
 using System.Data.SqlClient;
@@ -7,6 +8,8 @@ namespace debugGUI
 {
     public partial class Home : Form 
     {
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
 
         private IconButton currentButton;
         readonly Color ButtonColor = Color.FromArgb(115, 103, 240);
@@ -14,9 +17,6 @@ namespace debugGUI
        
         public static int adminResult;
         public static int userId;
-
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-
 
         public Home()
         {

@@ -16,8 +16,10 @@ namespace debugGUI
     {
         // change "koppeling" to desired address
         private HrKoppeling hrKoppeling = new HrKoppeling("http://localhost:8008");
-        // change connection string to match yours
-        SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+
+        static dbConnection dbConnection = new dbConnection();
+        SqlConnection conn = new SqlConnection(dbConnection.ConnectionString);
+
         SqlDataReader myreader;
 
         public FormEmployee()
@@ -119,19 +121,19 @@ namespace debugGUI
         }
         private void FillEditPanel(int id)
         {
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
-            conn2.Open();
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+            conn.Open();
             Employee_ID.Text = "";
             NameActual.Text = "";
             PasswordActual.Text = "";
             NewEmployeeAdminActual.Checked = false;
             try
             {
-                using (conn2)
+                using (conn)
                 {
                     // to get project name using task ID
                     // getting the data form the selected task in the top datagridview
-                    SqlCommand command = new SqlCommand("SELECT * FROM users WHERE id = '" + id + "'", conn2);
+                    SqlCommand command = new SqlCommand("SELECT * FROM users WHERE id = '" + id + "'", conn);
                     SqlDataReader reader = command.ExecuteReader();
                     if (reader.HasRows)
                     {
@@ -156,7 +158,7 @@ namespace debugGUI
                     }
                     reader.Close();
                 }
-                conn2.Close();
+                conn.Close();
             }
             catch (Exception e)
             {
@@ -229,11 +231,11 @@ namespace debugGUI
 
         private void UpdateEmployeeButton_Click(object sender, EventArgs e)
         {
-            SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+            SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
             try
             {
-                conn2.Open();
+                conn.Open();
 
                 int id = Convert.ToInt32(Employee_ID.Text);
                 string naam = NameActual.Text;
@@ -250,7 +252,7 @@ namespace debugGUI
                 }
 
 
-                SqlCommand command = new SqlCommand($"UPDATE users SET name=@naam, password = @password, admin = @admin WHERE id = {id}", conn2);
+                SqlCommand command = new SqlCommand($"UPDATE users SET name=@naam, password = @password, admin = @admin WHERE id = {id}", conn);
 
                 command.Parameters.AddWithValue("@naam", naam);
                 command.Parameters.AddWithValue("@password", password);
