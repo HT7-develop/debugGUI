@@ -13,17 +13,22 @@ namespace debugGUI.classes
         public string status { get; private set; }
         public int looptijd { get; private set; }
         public int id { get; private set; }
-        public string rol { get; private set; }
-        public DeelTaak? opvolger_id { get; private set; } = null;
+        public int rol { get; private set; }
+        public List<string>? opvolgers { get; private set; } = null;
 
-        public DeelTaak(string titel,string beschrijving, string rol, DeelTaak? opvolger_id, int looptijd, string status)
+        public DeelTaak(string titel, string beschrijving, int rol, List<string> opvolgers, int looptijd, string status)
         {
             this.titel = titel;
             this.looptijd = looptijd;
             this.status = status;
             this.beschrijving = beschrijving;
             this.rol = rol;
-            this.opvolger_id = opvolger_id;
+            this.opvolgers = opvolgers;
+        }
+
+        public void SaveDT(DeelTaak dt)
+        {
+
         }
     }
 }

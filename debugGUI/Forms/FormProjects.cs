@@ -26,9 +26,9 @@ namespace debugGUI
 
         private List<AvailabilityModel> projectleden = new List<AvailabilityModel>();
         private List<ProjectSoort> projectsoort = new List<ProjectSoort>();
-       
+
         public int TotalLooptijd;
-        public  int TotalGebruikte_uren;
+        public int TotalGebruikte_uren;
 
 
         public FormProjects()
@@ -39,7 +39,7 @@ namespace debugGUI
             // pre-fill datatable at init 
             FillProjectsDatatable();
 
-           
+
         }
 
         private void FillProjectsDatatable()
@@ -60,7 +60,7 @@ namespace debugGUI
             SqlCommand command = new SqlCommand("SELECT name FROM ProjectSoort", conn);
             SqlDataReader reader = command.ExecuteReader();
             var ProjectSoort = new List<string>();
-           
+
             while (reader.Read())
             {
                 string name = reader["name"].ToString();
@@ -86,17 +86,19 @@ namespace debugGUI
 
         private void FillPTasksDatatable(int id)
         {
-            conn.Open();
+            SqlConnection conn3 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+
+            conn3.Open();
             // fill the project tasks datatable
             String querry = "SELECT * FROM tasks where project_id = '" + id + "'";
 
-            SqlDataAdapter sda = new SqlDataAdapter(querry, conn);
+            SqlDataAdapter sda = new SqlDataAdapter(querry, conn3);
             DataTable dt = new DataTable();
             sda.Fill(dt);
             ProjectTasksDatatable.DataSource = dt;
             ProjectTasksDatatable.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             ProjectTasksDatatable.Columns[2].FillWeight = 400;
-            conn.Close();
+            conn3.Close();
 
 
 
@@ -118,55 +120,69 @@ namespace debugGUI
 
         private void NewProject(object sender, EventArgs e)
         {
-            
+            conn.Open();
             try
             {
-                conn.Open();
+                SqlConnection conn2 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
+
                 string naam = NewProjectNameActual.Text;
                 string beschrijving = NewProjectDescriptionActual.Text;
                 string projectsoort = ProjectSoortBox.Text;
-                string assignedUser = HRusersBox.Text;
-
+                string assignedUser = HRusersBox.Text.ToString();
+                List<string> opvolger_id = new List<string>();
                 // get deeltaken == projectid from Db
+
+                var insertCommand2 = new SqlCommand($"INSERT INTO projects (naam, beschrijving, projectsoort, [user]) VALUES ('{naam}','{beschrijving}','{projectsoort}','{assignedUser}')", conn);
+                insertCommand2.ExecuteNonQuery();
+                MessageBox.Show($"New Project {naam} created Successfully with ProjectSoort: {projectsoort}");
+                conn.Close();
+
+                conn.Open();
                 using (conn)
                 {
-                    // sql command to get the project with the ID passed from SelectProject(function)
                     SqlCommand querryDeeltaak = new SqlCommand("SELECT * FROM deeltaak where projectsoort = '" + projectsoort + "'", conn);
                     SqlDataReader reader = querryDeeltaak.ExecuteReader();
                     if (reader.HasRows)
                     {
-                        while (reader.Read())
+                        try
                         {
-                            string titel = (string)reader[1];
-                            string description = (string)reader[2];
-                            string status = (string)reader[3];
-                            int looptijd = (int)reader[4];
-                            DeelTaak opvolger_id = (DeelTaak)reader[5];
-                            string role = (string)reader[7];
-                            //new DeelTaak(titel, description, role, opvolger_id, looptijd, status);
+                            
+                            while (reader.Read())
+                            {
+                                string titel = (string)reader[1];
+                                string description = (string)reader[2];
+                                string status = (string)reader[3];
+                                int looptijd = (int)reader[4];
+                                if (reader[5] != System.DBNull.Value) {
+                                    opvolger_id.Add((string)reader[5]);
+                                }
+                                //string test = Convert.ToString(reader[5]);
+                                //var opvolger_id = test.Select(x => Convert.ToInt32(x.ToString())).ToList();
+                                int role = (int)reader[7];
+                                //DeelTaak create = new DeelTaak(titel, description, role, opvolger_id, looptijd, status);
+                                //DeelTaak.SaveDT(create);
+                                conn2.Open();
+                                var insertDT = new SqlCommand($"INSERT INTO tasks (title, beschrijving, status, looptijd, opvolger_id, project_id ,werknemer_id) VALUES ('{titel}','{beschrijving}','{status}','{looptijd}','{opvolger_id}','{5}','{assignedUser}')", conn2);
+                                insertDT.ExecuteNonQuery();
+                                conn2.Close();
+                            }
+                            //loop through results and make new Taak() with results from reader
+                            // add Deeltaken to Project in the DB 
+                            reader.Close();
+                            FillProjectsDatatable();
+                            conn.Close();
+                        }
+                        catch (Exception error)
+                        {
+                            conn.Close();
+                            MessageBox.Show(error.Message);
                         }
                     }
                     else
                     {
+                        reader.Close();
                         Console.WriteLine("No rows found.");
                     }
-                    reader.Close();
-                    conn.Close();
-                }
-
-                //loop through results and make new Taak() with results from reader
-                // add Deeltaken to Project in the DB 
-                try {
-                    conn.Open();
-                    var insertCommand = new SqlCommand($"INSERT INTO projects (naam, beschrijving, projectsoort, user) VALUES ('{naam}','{beschrijving}','{projectsoort}','{assignedUser}')", conn);
-                    insertCommand.ExecuteNonQuery();
-                    MessageBox.Show($"New Project {naam} created Successfully with ProjectSoort: {projectsoort}");
-                    conn.Close();
-                    FillProjectsDatatable();
-                } catch (Exception error)
-                {
-                    conn.Close();
-                    MessageBox.Show(error.Message);
                 }
             }
             catch (Exception error)
@@ -253,8 +269,8 @@ namespace debugGUI
                 }
             }
             catch (Exception error)
-            { 
-                MessageBox.Show(error.Message );
+            {
+                MessageBox.Show(error.Message);
             }
 
 
@@ -262,7 +278,7 @@ namespace debugGUI
 
         private void UpdateButtonClick(object sender, EventArgs e)
         {
-            // when click ing on the update button, get all values from the textboxes and add these values as new in the DB with the correct project id.
+            // when clicking on the update button, get all values from the textboxes and add these values as new in the DB with the correct project id.
             SqlConnection conn = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
             string name = NameActual.Text;
             try
@@ -324,7 +340,7 @@ namespace debugGUI
 
         private void LeadTimeCalc(int id)
         {
-            
+
             SqlConnection conn3 = new SqlConnection(@"Data Source=LAPTOP-6K52544T;Initial Catalog=rayco;Integrated Security=True");
 
             conn3.Open();
@@ -334,7 +350,7 @@ namespace debugGUI
                 // There is no checking at this point for tasks that can be done after another
                 // (even though that option can be set when creating a new task)
                 SqlCommand command2 = new SqlCommand("SELECT MAX(looptijd) FROM tasks WHERE project_id = '" + id + "'", conn3);
-              
+
                 SqlDataReader reader2 = command2.ExecuteReader();
 
                 if (reader2.HasRows)
